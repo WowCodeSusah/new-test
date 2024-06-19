@@ -1,0 +1,74 @@
+.sidebar-admin {
+    background-color: #04315b;
+    width: 15vw; // Adjust the percentage of the viewport width here
+    min-width: 250px; // Ensure it doesn't get smaller than 250px
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    font-family: 'Helvetica', sans-serif;
+    position: fixed;
+  
+    .top-admin {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10%;
+      margin-bottom: 10%;
+      
+      .logo-admin {
+        font-size: 2.5rem;
+        font-weight: bold;
+        font-family: 'MuseoModerno', 'Courier New', Courier, monospace;
+        color: #faf9f6;
+        text-align: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+    }
+  
+    .center-admin {
+      padding-left: 0.5rem;
+  
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+  
+      li {
+        display: flex;
+        align-items: center;
+        padding: 24px;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: #bdd8b0d2;
+          border-radius: 12px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+          .icon-admin {
+            color: #04315b;
+          }
+  
+          span {
+            color: #04315b;
+          }
+        }
+  
+        .icon-admin {
+          font-size: 18px;
+          color: #faf9f6;
+        }
+  
+        span {
+          font-size: 18px;
+          color: #faf9f6;
+          margin-left: 20px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,46 @@
+.widget-admin {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+  flex: 1;
+  padding: 45px;
+  background-color: #04315b;
+  border-radius: 10px;
+  color: #faf9f6;
+  width: 100%;
+  font-family: "Helvetica";
+
+  .left-admin { 
+    flex-direction: column;
+    flex: 1;
+
+    .title-admin {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .bottom-admin {
+      display: flex;
+      align-self: flex-end; /* Add this line */
+
+      .counter-admin {
+        display: flex;
+        font-size: 45px;
+        color: #faf9f6;
+        text-align: left;
+        font-weight: 600;
+        align-self: flex-end; /* Add this line */
+
+      }
+
+      .type-admin {
+        font-size: 32px;
+        display: flex;
+        color: #faf9f6;
+        text-align: left;
+        margin: auto 0px 0px 21px;
+        align-self: flex-end; /* Add this line */
+
+      }
+    }
+  }
+}

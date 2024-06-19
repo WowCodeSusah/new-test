@@ -1,0 +1,26 @@
+.react-datepicker {
+  font-family: "HelveticaNeueRoman", sans-serif; /* Change the font family here */
+}
+
+.react-datepicker__day,
+.react-datepicker__day-name,
+.react-datepicker__time-name {
+  font-family: "HelveticaNeueRoman", sans-serif;
+  color: #04315b; /* Ensure font applies to these elements as well */
+}
+
+/* Optionally, customize other elements if needed */
+.react-datepicker__header {
+  background-color: #ebebeb; /* Example: change the header background color */
+}
+
+.react-datepicker__current-month {
+  font-family: "HelveticaNeueMedium", sans-serif;
+  color: #04315b;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: #04315b; /* Example: change the background color of selected days */
+  color: #faf9f6; /* Example: change the color of the text for selected days */
+}

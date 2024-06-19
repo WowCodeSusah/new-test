@@ -1,0 +1,161 @@
+.TotalChartTextTitleDashboard {
+    font-size: 20px;
+    font-family: Helvetica, sans-serif;
+    color: #04315B;
+    font-weight: 700;
+    margin-left: 3%;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.PieChartHandlerDashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: calc(92% + 8px);
+    margin: auto;
+    gap: 3vw;
+    margin-top: 20px;
+}
+
+.PieChartWrapper {
+    width: 40vw;
+    margin: auto;
+    border-width: 4px;
+    border-radius: 10px;
+    border-color: #BFC4C8;
+    border-style: solid;
+    padding: 6px;
+    background-color: white;
+}
+
+.CentraManagerDashboardTopWrapper {
+    background-color: #EBEBEB;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.TitleRecentShipping {
+    font-size: 20px;
+    font-family: Helvetica, sans-serif;
+    color: #04315B;
+    font-weight: 700;
+    margin-left: 6%;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ShippingTitleHeaderCentraManager {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.ViewMoreRecentShipping {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: #04315B;
+    border-radius: 20px;
+    height: 34px;
+    width: 114px;
+    margin: auto 0 auto auto;
+    margin-right: 6%;
+}
+
+.ViewMoreRecentShippingText {
+    text-align: right;
+    font-family: Helvetica, sans-serif;
+    color: white;
+    font-size: 12px;
+    margin: auto 0 auto 0
+}
+
+.ArrowRecentShipping {
+    align-items: start;
+    margin: auto 0 auto 0
+}
+
+.GapSetterCentraManagerDashboard {
+    margin-top: 10px;
+}
+
+.PrimaryShippingDashboardContainer {
+    margin: auto;
+    width: calc(92% + 4px);
+    background-color: white;
+    margin-top: 10px;
+}
+
+.TitleTextShippingDashboardContainer {
+    background-color: #3C9284;
+    border-radius: 10px 10px 0px 0px;
+    border-color: #3C9284;
+    border-style: solid solid none solid;
+    border-width: 2px;
+    padding: 5px 0px 10px 0px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.TitleTextShippingDashboard {
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    margin: auto auto auto 10px;
+}
+
+.TitleTextShippingDashboardExtra {
+    text-decoration: underline;
+}
+
+.ShippingDashboardShowStatus {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 20px;
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+    font-size: 10px;
+    width: 62px;
+    padding: 5px 5px 5px 5px;
+    margin: auto 3px auto auto;
+}
+
+.ShippingDashboardMiniText {
+    display: grid;
+    grid-template-columns: 2fr 0fr 8fr;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 9px;
+}
+
+.ShippingDashboardMiniTextContainer {
+    background-color: #EBEBEB;
+    border-radius: 0px 0px 10px 10px;
+    border-color: #ACB3B9;
+    border-style: none solid solid solid;
+    border-width: 2px;
+    padding-top: 4px;
+    padding-bottom: 6px;
+}
+
+.ShippingDashboardMainText {
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    color: #04315B;
+}
+
+.ShippingDashboardDoubleDotText {
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    color: #04315B;
+}
+
+.ShippingDashboardAnswerText {
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    color: #04315B;
+    margin-left: 2px;
+}
+
+

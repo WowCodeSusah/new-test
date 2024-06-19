@@ -1,0 +1,212 @@
+$blue : #003366;
+.container-manager {
+  padding: 40px;
+  padding-left: 40px;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+.fixdash-2-manager{
+  background-color: #04315b;
+    width: 15vw; // Adjust the percentage of the viewport width here
+    min-width: 250px; // Ensure it doesn't get smaller than 250px
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.header-manager {
+  text-align: left;
+  margin-bottom: 20px;
+  color: $blue;
+  font-size: 40px ;
+  font-weight: bold;
+}
+
+.form-manager {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  flex-direction: row !important;
+}
+
+.image-container-manager {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.image-container-manager .button-manager{
+  padding: 8px 40px;
+  height: 40px;
+  border-radius: 25px;
+  color: $blue;
+  font-weight: bold;
+  font-size: 14px;
+}
+.avatar-manager {
+  width: 100px;
+  height: 100px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+.button-upload-manager{
+  width:250px;
+}
+
+.button-reset-manager{
+  width:125px;
+}
+.file-input-manager {
+  margin-left: 10px;
+}
+
+.button-manager {
+  background-color: #c8e6c9;
+  color: #388e3c;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+
+}
+
+.button2-manager {
+  background-color: #c8e6c9;
+  color: $blue;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  border-radius: 25px;
+  font-weight: bold;
+}
+.button2-manager:hover {
+  background-color: #a5d6a7;
+}
+
+
+
+.input-group-password-manager .button-manager{
+  position: relative;
+  background-color: $blue;
+  border-radius: 25px;
+  color:#fff;
+  align-items: center;
+  top: 6px;
+}
+.button-manager:hover {
+  background-color: #a5d6a7;
+}
+
+.input-group-manager {
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.label-manager {
+  margin-bottom: 0px;
+  color: #003366 !important;
+}
+
+.input-manager, .select-manager, .input-pw-manager {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid $blue !important;
+  border-radius:12px ;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.input-group-password-manager {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  
+}
+
+.input-group-password-manager .input-pw-manager {
+  flex-grow: 1;
+}
+
+.button-group-manager {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.button-group-manager .button-manager {
+  margin-top: 20px;
+  flex: 1;
+  background-color: #003366 !important;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 25px !important;
+}
+
+.button-group-manager .button-manager:hover {
+  background-color: #002244 !important;
+}
+
+.change-button-manager .button-manager:hover {
+  background-color: #002244;
+}
+
+.left-section-manager, .right-section-manager {
+  flex: 1;
+  min-width: 550px; /* Adjust as needed to prevent collapsing */
+}
+
+.text-below-buttons-manager{
+  margin-top: 80px;
+}
+
+.container-text-below-buttons-manager{
+  margin: 10px;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-direction: column;
+  text-align: center !important;
+  font-weight: 500;
+}
+
+.h3-style-manager{
+  font-size: 15px;
+  align-items: center;
+  font: helvetica;
+  flex-direction: column;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 500;
+  color: #04315B;
+}
+
+.buttons-vertical-manager{
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  text-align: center !important;
+}
+
+@media (min-width: 768px) {
+  .left-section, .right-section {
+    flex: 1 1 48%;
+  }
+}

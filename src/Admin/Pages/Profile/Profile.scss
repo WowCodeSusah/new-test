@@ -1,0 +1,189 @@
+$blue : #003366;
+.container-admin {
+  padding: 40px;
+  padding-left: 40px;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+.fixdash{
+  background-color: #04315b;
+  width: 15vw; // Adjust the percentage of the viewport width here
+  min-width: 250px; // Ensure it doesn't get smaller than 250px
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  font-family: 'Helvetica', sans-serif;
+}
+
+.header-admin {
+  text-align: left;
+  margin-bottom: 20px;
+  color: $blue;
+  font-size: 40px ;
+  font-weight: bold;
+}
+
+.form-admin {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  flex-direction: row !important;
+}
+
+.image-container-admin {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.image-container-admin .button-admin{
+  padding: 8px 40px;
+  height: 40px;
+  border-radius: 25px;
+  color: $blue;
+  font-weight: bold;
+  font-size: 14px;
+}
+.avatar-admin {
+  width: 100px;
+  height: 100px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+.button-upload-admin{
+  width:250px;
+}
+.file-input-admin {
+  margin-left: 10px;
+}
+
+.button-admin {
+  background-color: #c8e6c9;
+  color: #388e3c;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  text-align: center !important;
+
+}
+.input-group-password-admin .button-admin{
+  position: relative;
+  background-color: $blue;
+  border-radius: 25px;
+  color:#fff;
+  align-items: center;
+  top: 6px;
+}
+.button-admin:hover {
+  background-color: #a5d6a7;
+}
+
+.input-group-admin {
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.label-admin {
+  margin-bottom: 0px;
+  color: #003366 !important;
+}
+
+.input-admin, .select-admin, .input-pw-admin {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid $blue !important;
+  border-radius:12px ;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.input-group-password-admin {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  
+}
+
+.input-group-password-admin .input-pw-admin {
+  flex-grow: 1;
+}
+
+.button-group-admin {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.button-group-admin .button-admin {
+  margin-top: 20px;
+  flex: 1;
+  background-color: #003366 !important;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 25px !important;
+}
+
+.button-group-admin .button-admin:hover {
+  background-color: #002244 !important;
+}
+
+.change-button-admin .button-admin:hover {
+  background-color: #002244;
+}
+
+.left-section-admin, .right-section-admin {
+  flex: 1;
+  min-width: 550px; /* Adjust as needed to prevent collapsing */
+}
+
+.text-below-buttons-admin{
+  margin-top: 80px;
+}
+
+.container-text-below-buttons-admin{
+  margin: 10px;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-direction: column;
+  text-align: center !important;
+  font-weight: 500;
+}
+
+.h3-style-admin{
+  font-size: 15px;
+  align-items: center;
+  font: helvetica;
+  flex-direction: column;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 500;
+  color: #04315B;
+}
+
+.buttons-vertical-admin{
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  text-align: center !important;
+}
+
+@media (min-width: 768px) {
+  .left-section, .right-section {
+    flex: 1 1 48%;
+  }
+}

@@ -1,0 +1,48 @@
+.HeaderProfileContainer {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin-top: 6px;
+    margin-left: 5px;
+}
+
+.HeaderTextContainer {
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
+
+.HeaderProfileWelcomeText {
+    font-size: 12px;
+    font-family: Helvetica, sans-serif;
+    color: #04315B;
+}
+
+.HeaderProfileUserName {
+    font-size: 18px;
+    font-family: Helvetica, sans-serif;
+    color: #04315B;
+    font-weight: 700;
+}
+
+.HeaderCircleImageContainer {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: white;
+    margin-left: 5px;
+}
+
+.ImageHeader {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-left: 1px;
+}
+
+.HeaderTextOtherCentraManager {
+    font-size: 24px;
+    font-family: Helvetica, sans-serif;
+    color: #04315B;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-left: 20px;
+}

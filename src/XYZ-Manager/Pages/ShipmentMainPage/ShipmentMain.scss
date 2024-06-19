@@ -1,0 +1,98 @@
+$blue: #003366;
+$light-green: #c8e6c9;
+$dark-blue: #002244;
+$white: #ffffff;
+$text: #04315B;
+$grey-border: #CCCCCC; // Define a grey color for the border
+
+
+.home-manager {
+  display: flex;
+}
+
+.homeContainer-manager {
+  flex: 4;
+}
+  
+.shipment-manager {
+  margin: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: rgba(4, 49, 91, 1);
+}
+  
+.buttonsContainer-manager {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  margin-left: 20px; /* Adjust this value to move the buttons to the right */
+}
+  
+  .button-manager {
+    padding: 5px 15px;
+    border: 2px solid rgba(4, 49, 91, 1);
+    border-radius: 5px;
+    background-color: white;
+    color: rgba(4, 49, 91, 1);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  
+    &:hover {
+      background-color: rgba(4, 49, 91, 1);
+      color: white;
+    }
+
+    &.active {
+      background-color: rgba(4, 49, 91, 1);
+      color: white;
+    }
+  }
+  
+
+  .loading-manager{
+    align-items: center;
+  }
+
+  .shipment-container-manager {
+    background-color: rgba(189, 216, 176, 1);
+    padding: 5px;
+    margin-top: 20px; /* Increased the margin-top to create a larger gap */
+    border-radius: 1rem; /* Increase the border-radius for curvier edges */
+    width: 97%; /* Adjust the width to make the container smaller */
+    margin-left: auto; /* Center the container horizontally */
+    margin-right: auto; /* Center the container horizontally */
+  }
+  
+  .shipment-fields-manager {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10%; /* Adjust the gap between fields */
+    padding-left: 20px; /* Move fields to the right slightly */
+  }
+
+  .fixdash-2-manager{
+    background-color: #04315b;
+      width: 15vw; // Adjust the percentage of the viewport width here
+      min-width: 250px; // Ensure it doesn't get smaller than 250px
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      font-family: 'Helvetica', sans-serif;
+  }
+  
+  .field-manager {
+    color: rgba(4, 49, 91, 1);
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  .loading-manager{
+    align-items: center;
+    font-size: 100px;
+    color: $blue;
+    font-weight: bold;
+    margin-top: 17%;
+    padding-left: 27%;
+  }

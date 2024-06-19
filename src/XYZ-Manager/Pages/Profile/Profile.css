@@ -1,0 +1,119 @@
+/* .container {
+  padding: 20px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+.header {
+  text-align: left;
+  margin-bottom: 20px;
+  color: #003366;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.image-container {
+  display: flex;
+  align-items: left;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.file-input {
+  margin-left: 10px;
+}
+
+.button {
+  background-color: #c8e6c9;
+  color: #388e3c;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+.input-group-password .button{
+  position: relative;
+  top: 20px;
+}
+.button:hover {
+  background-color: #a5d6a7;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.label {
+  margin-bottom: 5px;
+  color: #003366;
+}
+
+.input, .select, .input-pw {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #003366;
+  border-radius:12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-group-password {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.input-group-password .input-pw {
+  flex-grow: 1;
+}
+
+.button-group {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.button-group .button {
+  margin-top: 35px;
+  flex: 1;
+  background-color: #003366;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.button-group .button:hover {
+  background-color: #002244;
+}
+
+.left-section, .right-section {
+  flex: 1;
+  min-width: 320px; /* Adjust as needed to prevent collapsing */
+/* }
+
+@media (min-width: 768px) {
+  .left-section, .right-section {
+    flex: 1 1 48%;
+  }
+} */ 

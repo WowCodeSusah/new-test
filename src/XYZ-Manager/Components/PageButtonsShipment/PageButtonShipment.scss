@@ -1,0 +1,33 @@
+.page-buttons-shipment-manager {
+    position: absolute; /* Position the buttons absolutely */
+    // top:21%; /* Adjust the top position as needed */
+    right: 2%; /* Align the buttons to the right */
+  }
+  
+  .page-button-manager {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    border: none;
+    background-color: #04315b;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .page-button-manager:hover {
+    background-color: #00213e;
+  }
+  
+  .page-button-manager.active {
+    background-color: #faf9f6;
+    color: #04315b;
+  }
+  
+  .page-button-manager.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }

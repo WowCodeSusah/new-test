@@ -1,0 +1,137 @@
+
+$white: #D9D9D9;
+$green: #BDD8B0;
+$blue: #04315B;
+
+.shipments {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  background-color: #0a285e;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 10px 0 0 10px;
+  width: 300px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h2 {
+      margin: 0;
+      font-size: 24px;
+      color: $white;
+    }
+
+    .close-button {
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #ffffff;
+      cursor: pointer;
+    }
+  }
+
+  .shipment-info {
+    margin-bottom: 20px;
+
+    p {
+      margin: 5px 0;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+  }
+
+  .shipment-info-text {
+    color: $green;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .timeline {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-left: 20px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 48.5px; /* Adjust this value to position the line correctly */
+      margin-top: 8px;
+      width: 2px;
+      height: 45%; /* This will make the line go through the entire timeline */
+      background-color: $white;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 24px; /* Position the dot correctly */
+        top: 3px;
+        width: 12px;
+        height: 12px;
+        background-color: $white;
+        border-radius: 50%;
+        border: 2px solid #0a285e;
+      }
+
+      .timeline-date {
+        font-size: 13px;
+        opacity: 0.8;
+        width: 60px;
+        text-align: right;
+        margin-right: 10px;
+        position: absolute;
+        left: -40px; /* Adjust to align the date properly */
+      }
+
+      .timeline-content {
+        font-size: 14px;
+        margin-left: 60px; /* Adjust to align the content properly */
+      }
+
+      &:last-child::after {
+        content: '';
+        position: absolute;
+        left: 30px;
+        top: 12px;
+        width: 2px;
+        height: calc(100% - 12px);
+        background-color: #0a285e; /* Matches the background to "erase" the line */
+      }
+    }
+  }
+
+  .confirm-button {
+    background-color: #d1e6c6;
+    color: $blue;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+
+    &:hover {
+      background-color: #b5d4a6;
+    }
+  }
+}

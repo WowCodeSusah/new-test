@@ -1,0 +1,9 @@
+.BarChartDashboardContainer {
+    margin: auto;
+    width: 92%;
+    border-width: 4px;
+    border-radius: 10px;
+    border-color: #BFC4C8;
+    border-style: solid;
+    background-color: white;
+}

@@ -1,0 +1,91 @@
+.CentraManagerHeaderBackContainer {
+    display: grid;
+    grid-template-columns: 0 1fr;
+    height: 100%;
+}
+
+.CentraManagerHeaderBackButtonImage {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    display: block;
+    margin: auto;
+    height: 24px;
+    width: 24px;
+    margin-top: 7px;
+}
+
+.CentraManagerHeaderBackText {
+    color: #04315B;
+    font-family: "Helvetica";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    margin: auto;
+}
+
+.CentraManagerHeaderBackButtonImageContainer {
+    height: 38px;
+    width: 38px;
+    background-color: #04315B;
+    border-radius: 50%;
+    margin: auto auto auto 10px;
+}
+
+.NotificationPageCentraManagerMainContainer {
+    color: #04315B;
+    font-family: "Helvetica";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 92%;
+    margin: 0 auto 0 auto;
+}
+
+.NotificationDotCentraManager {
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    background-color: #FF7C52;;
+    margin: auto;
+}
+
+.CentraManagerNotificationBlockContainer {
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+}
+
+.CentraManagerNotificationBlockContainerTimeContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.CentraManagerNotificationBlockContainerPrimary {
+    background-color: #EBEBEB;
+    border: 1px solid #ACB3B9;
+    border-radius: 12px;
+    padding: 10px;
+    margin-top: 12px;
+}
+
+.NotificationCentraManagerBlockDescription {
+    margin-top: 10px;
+    color: #787878;
+    font-family: "Helvetica";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    width: 80%;
+}
+
+.CentraManagerNotificationBlockContainerTimeText {
+    color: rgb(4, 49, 91, 0.3);
+    font-family: "Helvetica";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

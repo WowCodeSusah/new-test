@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 76.2px;
+        fill: #bdd8b0;
+        font-family: MuseoModerno;
+        font-weight: 600;
+      }
+    </style>
+  </defs>
+  <text id="M" class="cls-1" transform="translate(0 18.23) scale(0.288 0.235)">M</text>
+</svg>

@@ -1,0 +1,137 @@
+.navbar-admin {
+    width: 100%; // Match the total height of the sidebar's top section including margins
+    padding: 10px 0px 10px 0px;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
+    background-color: #bdd8b0;
+    
+
+    .wrapper-admin {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 20px; // Adjusted padding
+        margin-top: 10px;
+        margin-bottom: 10px;
+        .search-admin {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            height: 62px; // Keep consistent with original design
+            border-radius: 31px; // Makes the search bar more cylindrical
+            padding: 5px 10px; // Adjusts the padding inside the search bar
+            border: 2px solid rgba(4, 49, 91, 1);
+            width: 50%; // Use percentage to make it responsive
+
+            .searchIcon-admin {
+                color: rgba(4, 49, 91, 1); // Color of the search icon
+                margin: 0px 0px 0px 21px;
+            }
+
+            input {
+                border: none;
+                outline: none;
+                background: transparent;
+                padding: 5px 10px;
+                font-size: 16px;
+                flex: 1; // Ensures input takes the remaining space
+
+                &::placeholder {
+                    color: #aaa;
+                }
+            }
+        }
+        
+        .ProfileNotifSettingPosistion-Admin{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-left: auto;
+        }
+        
+
+        .items-admin {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+
+            .profile-admin {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                
+            }
+
+            .name-admin {
+                font-size: 20px;
+                color: rgba(4, 49, 91, 1);
+                font-weight: 500;
+            }
+
+            .role-admin {
+                font-size: 16px;
+                color: rgba(4, 49, 91, 1);
+                align-self: flex-end; // Aligns the role text to the right
+            }
+
+            .item-admin {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                position: relative;
+
+            }
+            .notif-admin {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                position: relative;
+                margin-right: 16    px;
+            }
+
+            .separator-admin {
+                width: 2px;
+                height: 40px; // Adjust the height as needed
+                background-color: rgba(4, 49, 91, 1);
+                margin: 0 16px; // Adjust the spacing as needed
+                
+            }
+
+            .avatar-admin {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                margin-left: 16px; // Adjust the spacing between icons as needed    
+                
+            }
+            .setting-admin {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                position: relative;
+                margin-right: 20px;
+            
+            }
+
+            .counter-admin {
+                width: 20px;
+                height: 20px;
+                background-color: #ff7c52;
+                border-radius: 50%;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 10px;
+                font-weight: bold;
+                position: absolute;
+                top: -5px;
+                right: -5px;
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.header-admin {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.backButton-admin {
+    margin-right: 20px;
+    border: none; /* Remove border for the back button */
+    padding: 0; /* Remove padding */
+    background: transparent; /* Remove background */
+    color: #04315b;
+
+}
+
+.pageTitle-admin {
+    color: #04315b;
+    font-family: var(--font-helvetica-neue);
+    font-size: 32px;
+}

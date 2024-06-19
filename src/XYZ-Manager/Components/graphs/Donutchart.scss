@@ -1,0 +1,28 @@
+.donut-chart-container-manager {
+    display: flex;
+    justify-content: space-between; /* Add space between donut charts */
+    flex-direction: column;
+  }
+  
+  .donut-chart-manager {
+    margin: 5px; /* Adjust the margin as needed */
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  
+  .donut-chart-manager .donut-circle-manager {
+    fill: none;
+    stroke: #ccc; /* Define the color of the outer circle */
+  }
+  
+  .donut-chart-manager .donut-segment-manager {
+    fill: none;
+    stroke: rgb(12, 147, 102); /* Define the color of the donut segment */
+  }
+  
+  .donut-chart-manager .donut-text-manager {
+    fill: black; /* Define the color of the text */
+    font-size: 100%; /* Set the font size of the text */
+    text-anchor: middle;
+  }
+  

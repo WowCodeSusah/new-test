@@ -1,0 +1,119 @@
+.table-container-manager {
+    background-color: rgb(192, 196, 196);
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 1rem; /* Increase the border-radius for curvier edges */
+    width: 97%; /* Adjust the width to make the container smaller */
+    height: 65%;
+    margin-left: auto; /* Center the container horizontally */
+    margin-right: auto; /* Center the container horizontally */
+  }
+  
+  .table-manager {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+  
+    .th-manager, .td-manager {
+      border: 1px solid rgb(192, 196, 196);
+      padding: 8px;
+      text-align: center;
+      border-radius: 1rem; /* Increase the border-radius for curvier edges */
+    }
+  
+    .th-manager {
+      background-color: #04315b;
+      color: white;
+      font-weight: bold;
+    }
+  
+    .tr-manager:nth-child(even) {
+      background-color: rgb(192, 196, 196);
+    }
+  
+    .tr-manager:hover {
+      background-color: #ddd;
+    }
+  }
+  
+  .clickable-manager {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #04315b;
+    cursor: pointer;
+  }
+  
+  .green-manager {
+    padding: 7px;
+    margin-top: 10px;
+    color: rgb(0, 128, 87);
+    background-color: rgba(143, 254, 206, 0.631);
+    border-radius: 5rem;
+    width: 100%;
+    border: 1px solid rgb(0, 128, 87);
+  }
+  
+  .red-manager {
+    padding: 7px;
+    margin-top: 10px;
+    color: rgb(138, 12, 12);
+    background-color: rgba(254, 143, 143, 0.631);
+    border-radius: 5rem;
+    width: 100%;
+    border: 1px solid rgb(138, 12, 12);
+  }
+  
+  .blue-manager {
+    padding: 7px;
+    margin-top: 10px;
+    color: rgb(6, 6, 167);
+    background-color: rgba(0, 183, 255, 0.631);
+    border-radius: 5rem;
+    width: 100%;
+    border: 1px solid rgb(6, 6, 167);
+  }
+  
+  .yellow-manager {
+    padding: 7px;
+    margin-top: 10px;
+    color: rgb(126, 126, 25);
+    background-color: rgb(244, 240, 124);
+    border-radius: 5rem;
+    width: 100%;
+    border: 1px solid rgb(126, 126, 25);
+  }
+  
+  /* Add gaps between Batch ID and Shipping ID columns */
+  .table-manager .th-manager:nth-child(1),
+  .table-manager .td-manager:nth-child(1) {
+    padding-right: 10%;
+    padding-left: 1%; /* Adjust this value as needed */
+    margin-right: 2px;
+  }
+  
+  .table-manager .th-manager:nth-child(2),
+  .table-manager .td-manager:nth-child(2) {
+    padding-left: 110px; /* Adjust this value as needed */
+    margin: 20px;
+  }
+  
+  .table-manager .th-manager:nth-child(3),
+  .table-manager .td-manager:nth-child(3) {
+    padding-left:150px; /* Adjust this value as needed */
+  }
+  
+  .table-manager .th-manager:nth-child(4),
+  .table-manager .td-manager:nth-child(4) {
+    padding-right: 0px; /* Adjust this value as needed */
+    padding-left: 8%;
+  }
+  
+  .table-manager .th-manager:nth-child(5),
+  .table-manager .td-manager:nth-child(5) {
+    padding-left: 10% /* Adjust this value as needed */
+  }
+  
+  // .table-manager .th-manager:nth-child(6),
+  // .table-manager .td-manager:nth-child(6) {
+  //   padding-right: 10%; /* Adjust this value as needed */
+  // }

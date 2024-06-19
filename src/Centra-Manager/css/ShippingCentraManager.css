@@ -1,0 +1,176 @@
+.ShippingViewButtonsContainer {
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+    gap: 4px;
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
+.ShippingViewButtonContainerText {
+    border: 1px solid #04315B;
+    border-radius: 20px;
+    text-align: center;
+    color: #04315B;
+    font-family: Helvetica;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 10px 0px 10px 0px;
+    transition: ease-in 0.2s;
+}
+
+.CentraManagerAddNewContainer {
+    background-color: #EBEBEB;
+    padding-top: 30px;
+    height: calc(100vh - 60px);
+}
+
+.CentraManagerAddNewButtonContainers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    gap: 3px;
+    position: absolute;
+    bottom: 20px;
+    width: 92%;
+    left: 0;
+    right: 0;
+    margin: 0 auto 0 auto;
+}
+
+.CentraManagerAddNewButtonCancelContainer {
+    border-radius: 40px;
+    border: 1px solid #04315B;
+    font-family: "Helvetica";
+    padding: 15px 0px 15px 0px;
+    color: #04315B;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.CentraManagerAddNewButtonAddContainer {
+    border-radius: 40px;
+    background: #04315B;
+    color: white;
+    font-family: "Helvetica";
+    padding: 15px 0px 15px 0px;
+}
+
+.CentraManagerAddNewButtonDeleteContainer:hover {
+    background-color: #214D76;
+}
+
+.CentraManagerAddNewButtonAddContainer:hover {
+    background-color: #214D76;
+    color: white;
+}
+
+.leaflet-container {
+    height: 350px;
+    width: 92%;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.CentraManagerTrackOrderSubContainer {
+    background-color: #ECECEC;
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 0;
+    width: 290px;
+    margin: auto;
+    padding: 20px 0px 20px 0px;
+    position: relative;
+    margin-top: -50px;
+    z-index: 1000;
+}
+
+.CentraManagerTrackOrderSubContainerContainer {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.CentraManagerTrackOrderSubContainerImage {
+    margin: auto;
+    z-index: 1000;
+}
+
+.CentraManagerTrackOrderSubContainerText {
+    margin: auto 0 auto 0;
+    color: #04315B;
+    font-family: "Helvetica";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.CentraManagerTrackOrderSubContainerDashedLine {
+    height: 40px;
+    border-color: #ACB3B9;
+    border-style: none none none dashed;
+    border-width: 2px;
+    position: absolute;
+    top: 41px;
+    left: 36px;
+    z-index: 0;
+}
+
+.CentraManagerTrackOrderCheckListContainer {
+    background-color: #ECECEC;
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 0;
+    width: 320px;
+    margin: auto;
+    padding: 5px 0px 20px 0px;
+    position: relative;
+    z-index: 1000;
+    margin-top: 20px;
+}
+
+.CentraManagerTrackOrderCheckListTextContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 4fr;
+}
+
+.CentraManagerTrackOrderCheckListText {
+    text-align: center;
+    font-family: "Helvetica";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: auto 0 auto 0;
+}
+
+.CentraManagerTrackOrderCheckListTextOrder {
+    font-family: "Helvetica";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: auto 0 auto 0;
+}
+
+.CentraManagerTrackOrderCheckListImage {
+    background-color: #04315B;
+    border-radius: 50%;
+    padding: 3px;
+    margin: auto;
+    z-index: 1000;
+}
+
+.CentraManagerTrackOrderSubContainerOrderLine {
+    height: 200px;
+    border-color: #04315B;
+    border-style: none none none solid;
+    border-width: 2px;
+    position: absolute;
+    top: 41px;
+    left: 79px;
+    z-index: 0;
+}

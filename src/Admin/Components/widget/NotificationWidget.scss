@@ -1,0 +1,86 @@
+.notificationWidget-admin {
+    background-color: #bdd8b0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+  .notificationWidget-admin {
+    background-color: #bdd8b0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    }
+
+    .notificationHeader-admin {
+    display: flex;
+    align-items: center;
+    background-color: #003366;
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold; /* Added font-weight property */
+    font-size: 18px; /* Increased font size */
+    }
+    
+    .notificationIcon-admin {
+    margin-right: 10px;
+    }
+    
+    .notificationTitle-admin {
+    font-size: 16px;
+    font-weight: bold;
+    }
+    
+    .notificationList-admin {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    }
+    
+    .notificationList-admin li {
+    padding: 10px 0;
+    border-bottom: 1px solid #a1d3a1;
+    color: #04315b;
+    font-weight: 500;  
+    }
+    
+    .notificationList-admin li:last-child {
+    border-bottom: none;
+    }
+  .notificationHeader-admin {
+    display: flex;
+    align-items: center;
+    background-color: #003366;
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+  }
+  
+  .notificationIcon-admin {
+    margin-right: 10px;
+  }
+  
+  .notificationTitle-admin {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .notificationList-admin {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+  }
+  
+  .notificationList-admin li {
+    padding: 10px 0;
+    border-bottom: 1px solid #a1d3a1;
+    color: #04315b;
+    font-weight: 500;  
+  }
+  
+  .notificationList-admin li:last-child {
+    border-bottom: none;
+  }
+  

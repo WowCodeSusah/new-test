@@ -1,0 +1,66 @@
+.accountPage-admin {
+  display: flex;
+  height: 100vh;
+}
+
+.accountContent-admin {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.accountTableContainer-admin {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 0px 20px 20px;
+}
+
+.accountHeader-admin {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  padding-bottom: 5px;
+}
+
+.accountTitle-admin {
+  font-size: 32px;
+  font-family: "Helvetica";
+  color: #04315b;
+  text-align: left;
+  margin: 0;
+  font-weight: bold;
+}
+
+.accountHeaderButtons {
+  display: flex;
+  align-items: center;
+}
+
+.pendingButton {
+  background-color: #f48c06; /* Orange background color */
+  border: none;
+  border-radius: 50%; /* Makes it circular */
+  cursor: pointer;
+  padding: 7px;
+  margin-right: 10px; /* Adjust margin as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pendingButton:hover {
+  background-color: #e86f00; /* Darker shade on hover */
+}
+
+.fixdash {
+  background-color: #04315b;
+  width: 15vw;
+  min-width: 250px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  font-family: 'Helvetica', sans-serif;
+}

@@ -1,0 +1,28 @@
+.progress-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  background-color: #04315b; /* Background color similar to your image */
+  border-radius: 10px;
+}
+
+.progress-ring__group {
+  transform: rotate(-90deg); /* Apply rotation only to the group */
+  transform-origin: 50% 50%;
+}
+
+.progress-ring__circle {
+  stroke-dasharray: 565.48; /* Adjusted for the new radius */
+  stroke-dashoffset: 565.48; /* Adjusted for the new radius */
+}
+
+.checkmark {
+  opacity: 0;
+  transition: opacity 0.5s ease 0.5s; /* Fade in with a delay */
+}
+
+.checkmark.visible {
+  opacity: 1;
+}

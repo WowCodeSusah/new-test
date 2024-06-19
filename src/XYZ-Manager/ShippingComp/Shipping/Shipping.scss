@@ -1,0 +1,71 @@
+.home {
+  display: flex;
+}
+
+.homeContainer {
+  flex: 4;
+}
+
+.Delivered-manager{
+  font-weight: 600;
+}
+
+.shipment {
+  margin: 20px;
+  font-size: 34px;
+  font-weight: bold;
+  color: rgba(4, 49, 91, 1);
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  margin-left: 20px; /* Adjust this value to move the buttons to the right */ ;
+  
+}
+
+.button {
+  padding: 15px 20px;
+  border: 2px solid rgba(4, 49, 91, 1);
+  border-radius: 5px;
+  background-color: white;
+  color: rgba(4, 49, 91, 1);
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: rgba(4, 49, 91, 1);
+    color: white;
+  }
+}
+
+.button.active {
+  background-color: rgba(4, 49, 91, 1);
+  color: white;
+}
+
+.shipment-container-2 {
+  background-color: rgba(189, 216, 176, 1);
+  padding: 5px;
+  margin-top: 20px; /* Increased the margin-top to create a larger gap */
+  border-radius: 1rem; /* Increase the border-radius for curvier edges */
+  width: 77%; /* Adjust the width to make the container smaller */
+  margin-right: auto; /* Center the container horizontally */
+  margin-left: 1.5%;
+}
+
+.shipment-fields-2 {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 9%; /* Adjust the gap between fields */
+  padding-left: 2%; /* Move fields to the right slightly */
+}
+
+.field {
+  color: rgba(4, 49, 91, 1);
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
