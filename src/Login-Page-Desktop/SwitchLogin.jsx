@@ -4,7 +4,7 @@ import LoginPageMobile from "../Login-Page-Mobile/components/LoginPageMobile"
 import UseWindowThreshold from "../UseWindowThreshold"
 
 // eslint-disable-next-line react/prop-types
-function SwitchLogin() {
+function SwitchLogin({setState}) {
   const MAX_MOBILE_WIDTH = 950
   const isMobileSize = UseWindowThreshold(MAX_MOBILE_WIDTH)
 
@@ -14,7 +14,7 @@ function SwitchLogin() {
 
   return (
     <>
-      { isMobileSize ? <LoginPageMobile /> : <LoginPage /> }
+      { isMobileSize ? <LoginPageMobile /> : <LoginPage setState={setState}/> }
     </>
   )
 }
