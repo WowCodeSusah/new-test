@@ -12,7 +12,7 @@ import axios from 'axios';
 
 function App() {
   const [state, setState] = useState('Login')
-  var stateVariable = <SwitchLogin />
+  var stateVariable = <SwitchLogin  setState={setState}/>
 
   useEffect(() => {
     axios.post('https://test-backend-k9s7.vercel.app/whoami', {}, {withCredentials: true})
