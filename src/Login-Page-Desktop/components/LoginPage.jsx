@@ -8,7 +8,7 @@ import { useState } from 'react';
 import axios from 'axios';
 
 // eslint-disable-next-line react/prop-types
-function LoginPage() {
+function LoginPage({setState}) {
   // eslint-disable-next-line no-unused-vars
   const {height, width} = useWindowDimensions();
   const [status, setStatus] = useState('Register');
@@ -55,7 +55,7 @@ function LoginPage() {
     </animated.div>
       <div className='PrimaryContainer'>
         <div className='PrimarySlot'>
-          <LoginPrimary click={handleClick} currentState={status}/>
+          <LoginPrimary click={handleClick} currentState={status} setState={setState}/>
         </div>
         <div>
           Empty
