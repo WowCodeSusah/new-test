@@ -5,11 +5,11 @@ function HomeIcon({NavigationState, setNavigationState}) {
     var BarSize = "0px"
     
     if (NavigationState[0][0] == true) {
-      ImagePath = "./src/Centra-Manager/assets/home-pressed.svg"
+      ImagePath = "../assets/home-pressed.svg"
       TextColor = "#04315B"
       BarSize = "50px"
     } else {
-      ImagePath = "src/Centra-Manager/assets/home.svg"
+      ImagePath = "../assets/home.svg"
       TextColor = "#3C9284"
       BarSize = "0px"
     }
