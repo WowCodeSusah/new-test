@@ -1,6 +1,6 @@
 // eslint-disable-next-line react/prop-types
 function HomeIcon({NavigationState, setNavigationState}) {
-    var ImagePath = "/src/Centra-Manager/assets/home.svg"
+    var ImagePath = "../assets/home.svg"
     var TextColor = "#3C9284"
     var BarSize = "0px"
     
