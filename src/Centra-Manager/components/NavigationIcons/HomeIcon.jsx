@@ -1,4 +1,5 @@
 import home from '../../assets/home.svg'
+import homePressed from '../../assets/home-pressed.svg'
 
 // eslint-disable-next-line react/prop-types
 function HomeIcon({NavigationState, setNavigationState}) {
@@ -7,11 +8,11 @@ function HomeIcon({NavigationState, setNavigationState}) {
     var BarSize = "0px"
     
     if (NavigationState[0][0] == true) {
-      ImagePath = '../../assets/home-pressed.svg'
+      ImagePath = homePressed
       TextColor = "#04315B"
       BarSize = "50px"
     } else {
-      ImagePath = '../../assets/home.svg'
+      ImagePath = home
       TextColor = "#3C9284"
       BarSize = "0px"
     }
