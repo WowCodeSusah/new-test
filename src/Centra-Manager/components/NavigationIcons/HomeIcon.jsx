@@ -1,6 +1,3 @@
-import {HomePressed} from '../../assets/home-pressed.svg'
-import {Home} from '../../assets/home.svg'
-
 // eslint-disable-next-line react/prop-types
 function HomeIcon({NavigationState, setNavigationState}) {
     var ImagePath = '../../assets/home.svg'
