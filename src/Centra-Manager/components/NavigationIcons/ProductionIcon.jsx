@@ -1,15 +1,15 @@
 // eslint-disable-next-line react/prop-types
 function ProductionIcon({NavigationState, setNavigationState}) {
-    var ImagePath = "src/Centra-Manager/assets/production.svg"
+    var ImagePath = "../../assets/production.svg"
     var TextColor = "#3C9284"
     var BarSize = "0px"
     
     if (NavigationState[1][0] == true || NavigationState[1][1] == true || NavigationState[1][2] == true || NavigationState[1][3] == true) {
-      ImagePath = "src/Centra-Manager/assets/production-pressed.svg"
+      ImagePath = "../../assets/production-pressed.svg"
       TextColor = "#04315B"
       BarSize = "50px"
     } else {
-      ImagePath = "src/Centra-Manager/assets/production.svg"
+      ImagePath = "../../assets/production.svg"
       TextColor = "#3C9284"
       BarSize = "0px"
     }
