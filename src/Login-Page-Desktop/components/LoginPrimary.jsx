@@ -54,6 +54,7 @@ function LoginPrimary({click, currentState, setState}) {
   function onSubmit (event) {
     event.preventDefault()
     loginUser(name, password)
+    // to by pass cookies in case it doesnt work
     getRole(name)
   }
 

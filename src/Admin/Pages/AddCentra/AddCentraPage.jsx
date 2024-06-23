@@ -1,21 +1,25 @@
 import React from 'react';
-import { IconButton, Typography } from '@mui/material';
+import { IconButton } from '@mui/material';
 import { ArrowBack } from '@mui/icons-material';
-import AccountForm from "../../Components/AddAccount/AccountForm";
-import './AddAccountPage.scss';
+import CentraForm from '../../Components/AddingCentra/CentraForm';
+import './AddCentraPage.scss';
 
-const AddAccountPage = ({ onBack }) => {
+const AddCentraPage = ({ onBack, onSaveCentra }) => {
+  const handleSave = (centraData) => {
+    onSaveCentra(centraData);
+  };
+
   return (
-    <div className="addAccountPage-admin">
+    <div className="addCentraPage-admin">
       <div className="header-admin">
         <IconButton className="backButton-admin" onClick={onBack}>
-          <ArrowBack style={{color: '#04315b'}}/>
+          <ArrowBack style={{ color: '#04315b' }} />
         </IconButton>
-        <h1 className="pageTitle-admin">Add Account</h1>
+        <h1 className="pageTitle-admin">Add Centra</h1>
       </div>
-      <AccountForm />
+      <CentraForm onSave={handleSave} />
     </div>
   );
 };
 
-export default AddAccountPage;
+export default AddCentraPage;

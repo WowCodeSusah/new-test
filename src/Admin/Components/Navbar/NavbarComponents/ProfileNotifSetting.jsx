@@ -5,7 +5,7 @@ import { useState } from 'react';
 // eslint-disable-next-line react/prop-types
 function ProfileNotifSetting({togglePage, pages}) {
     const [ProfiileNotifNames, setProfiileNotifNames] = useState({
-        userName: 'John rawr',
+        userName: 'Raihan Zulfi',
         userRole: 'Admin'
     });
 

@@ -6,7 +6,7 @@ import './AddAccountPage.scss';
 
 const AddAccountPage = ({ onBack, onSaveAccount }) => {
   const handleSave = (accountData) => {
-    onSaveAccount(accountData);
+    onSaveAccount(accountData); 
   };
 
   return (

@@ -15,7 +15,7 @@ function UnrescaledStorageList({ allStorage, searchQuery }) {
   const updateWeight = (selectedStorage) => {
     const weightInt = parseInt(newWeight.value, 10); // Parse weight into an integer
     console.log(weightInt);
-    axios.put(`http://localhost:8000/storages/put/${selectedStorage.idStorage}`, 
+    axios.put(`https://test-backend-k9s7.vercel.app/storages/put/${selectedStorage.idStorage}`, 
         { weight: weightInt }
     )
       .then((response) => {

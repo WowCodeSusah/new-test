@@ -1,18 +1,23 @@
+import profileHead from '../../assets/profile-head.svg'
+import profileBody from '../../assets/profile-body.svg'
+import profileHeadPressed from '../../assets/profile-head-pressed.svg'
+import profileBodyPressed from '../../assets/profile-body-pressed.svg'
+
 // eslint-disable-next-line react/prop-types
 function ProfileIcon({NavigationState, setNavigationState}) {
-    var ImagePathHead = "src/Centra-Manager/assets/profile-head.svg"
-    var ImagePathBody = "src/Centra-Manager/assets/profile-body.svg"
+    var ImagePathHead = profileHead
+    var ImagePathBody = profileBody
     var TextColor = "#3C9284"
     var BarSize = "0px"
     
     if (NavigationState[4][0] == true) {
-      ImagePathHead = "src/Centra-Manager/assets/profile-head-pressed.svg"
-      ImagePathBody = "src/Centra-Manager/assets/profile-body-pressed.svg"
+      ImagePathHead = profileHeadPressed
+      ImagePathBody = profileBodyPressed
       TextColor = "#04315B"
       BarSize = "50px"
     } else {
-      ImagePathHead = "src/Centra-Manager/assets/profile-head.svg"
-      ImagePathBody = "src/Centra-Manager/assets/profile-body.svg"
+      ImagePathHead = profileHead
+      ImagePathBody = profileBody
       TextColor = "#3C9284"
       BarSize = "0px"
     }

@@ -1,16 +1,19 @@
 import '../../css/ShippingCentraManager.css'
 import { MapContainer, Marker, Polyline, Popup, TileLayer } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
+import DeliveryStart from '../../assets/DeliveryStart.svg'
+import MarkerCentra from '../../assets/MarkerCentra.svg'
+import Check from '../../assets/check.svg'
 import { Icon } from 'leaflet'
 
 function CentraManagerShippingTrackOrder() {
   const customIcon1 = new Icon({
-    iconUrl: 'src/Centra-Manager/assets/DeliveryStart.svg',
+    iconUrl: DeliveryStart,
     iconSize: [18, 18]
   })
 
   const customIcon2 = new Icon({
-    iconUrl: 'src/Centra-Manager/assets/MarkerCentra.svg',
+    iconUrl: MarkerCentra,
     iconSize: [30, 30]
   })
 
@@ -45,11 +48,11 @@ function CentraManagerShippingTrackOrder() {
       </MapContainer>
       <div className='CentraManagerTrackOrderSubContainer'>
           <div className='CentraManagerTrackOrderSubContainerContainer'>
-              <img src='src/Centra-Manager/assets/DeliveryStart.svg' className='CentraManagerTrackOrderSubContainerImage'></img>
+              <img src={DeliveryStart} className='CentraManagerTrackOrderSubContainerImage'></img>
               <div className='CentraManagerTrackOrderSubContainerText'>jl Rungkut Menanggal No 9 A, 60293, Surabaya, Indonesia</div>
           </div>
           <div className='CentraManagerTrackOrderSubContainerContainer' style={{marginTop: '15px'}}>
-              <img src='src/Centra-Manager/assets/MarkerCentra.svg' className='CentraManagerTrackOrderSubContainerImage'></img>
+              <img src={MarkerCentra} className='CentraManagerTrackOrderSubContainerImage'></img>
               <div className='CentraManagerTrackOrderSubContainerText'>Harbour Sutra</div>
           </div>
           <div className='CentraManagerTrackOrderSubContainerDashedLine'></div>
@@ -57,27 +60,27 @@ function CentraManagerShippingTrackOrder() {
       <div className='CentraManagerTrackOrderCheckListContainer'>
           <div className='CentraManagerTrackOrderCheckListTextContainer' style={{marginTop: '18px'}}>
               <div className='CentraManagerTrackOrderCheckListText'>24 Mar 23:42</div>
-              <img src='src\Centra-Manager\assets\check.svg' className='CentraManagerTrackOrderCheckListImage'></img>
+              <img src={Check} className='CentraManagerTrackOrderCheckListImage'></img>
               <div className='CentraManagerTrackOrderCheckListTextOrder'>The order has delivered to the destination.</div>
           </div>
           <div className='CentraManagerTrackOrderCheckListTextContainer' style={{marginTop: '18px'}}>
               <div className='CentraManagerTrackOrderCheckListText'>24 Mar 23:42</div>
-              <img src='src\Centra-Manager\assets\check.svg' className='CentraManagerTrackOrderCheckListImage'></img>
+              <img src={Check} className='CentraManagerTrackOrderCheckListImage'></img>
               <div className='CentraManagerTrackOrderCheckListTextOrder'>Order has been shipped.</div>
           </div>
           <div className='CentraManagerTrackOrderCheckListTextContainer' style={{marginTop: '18px'}}>
               <div className='CentraManagerTrackOrderCheckListText'>24 Mar 23:42</div>
-              <img src='src\Centra-Manager\assets\check.svg' className='CentraManagerTrackOrderCheckListImage'></img>
+              <img src={Check} className='CentraManagerTrackOrderCheckListImage'></img>
               <div className='CentraManagerTrackOrderCheckListTextOrder'>Order has been picked up.</div>
           </div>
           <div className='CentraManagerTrackOrderCheckListTextContainer' style={{marginTop: '18px'}}>
               <div className='CentraManagerTrackOrderCheckListText'>24 Mar 23:42</div>
-              <img src='src\Centra-Manager\assets\check.svg' className='CentraManagerTrackOrderCheckListImage'></img>
+              <img src={Check} className='CentraManagerTrackOrderCheckListImage'></img>
               <div className='CentraManagerTrackOrderCheckListTextOrder'>Order is being packaged.</div>
           </div>
           <div className='CentraManagerTrackOrderCheckListTextContainer' style={{marginTop: '18px'}}>
               <div className='CentraManagerTrackOrderCheckListText'>24 Mar 23:42</div>
-              <img src='src\Centra-Manager\assets\check.svg' className='CentraManagerTrackOrderCheckListImage'></img>
+              <img src={Check} className='CentraManagerTrackOrderCheckListImage'></img>
               <div className='CentraManagerTrackOrderCheckListTextOrder'>Order has been placed.</div>
           </div>
           <div className='CentraManagerTrackOrderSubContainerOrderLine'></div>

@@ -1,5 +1,9 @@
 import axios from 'axios';
 import '../../css/ProfileCentraManager.css'
+import ProfileTest from '../../assets/ProfileTest.jpg'
+import Edit from '../../assets/EditIcon.svg'
+import Settings from '../../assets/SettingsIcon.svg'
+import LogOut from '../../assets/LogOutIcon.svg'
 import ProfileCentraManagerButtons from './ProfileCentraManagerButtons'
 import { useSpring, animated } from '@react-spring/web'
 
@@ -29,16 +33,16 @@ function CentraManagerProfileMain({setNavigation}) {
     <div className='ProfileColorContainer'>
         <animated.div className='ProfileCentraManagerContainerTopHalf' style={{...springs}}>
             <div className='ProfileCentraManagerContainerTitle'>Account</div>
-            <img src='src\Centra-Manager\assets\ProfileTest.jpg' className='ProfileCentraManagerImageContainer'></img>
+            <img src={ProfileTest} className='ProfileCentraManagerImageContainer'></img>
             <div className='ProfileCentraManagerContainerTextUsername'>John Doe</div>
             <div className='ProfileCentraManagerContainerSubText'>Centra Manager</div>
             <div className='ProfileCentraManagerContainerIDText'>ID: U108</div>
         </animated.div>
         <div style={{paddingTop: "258px"}}>
-            <ProfileCentraManagerButtons label={"Edit Profile"} imgSRC={'src/Centra-Manager/assets/EditIcon.svg'} animationStart={200} setNavigation={setNavigation}/>
-            <ProfileCentraManagerButtons label={"Settings"} imgSRC={'src/Centra-Manager/assets/SettingsIcon.svg'} animationStart={400} setNavigation={setNavigation}/>
+            <ProfileCentraManagerButtons label={"Edit Profile"} imgSRC={Edit} animationStart={200} setNavigation={setNavigation}/>
+            <ProfileCentraManagerButtons label={"Settings"} imgSRC={Settings} animationStart={400} setNavigation={setNavigation}/>
             <div onClick={() => deleteSession()}>
-            <ProfileCentraManagerButtons label={"Logout"} imgSRC={'src/Centra-Manager/assets/LogOutIcon.svg'} animationStart={600} setNavigation={setNavigation}/>
+            <ProfileCentraManagerButtons label={"Logout"} imgSRC={LogOut} animationStart={600} setNavigation={setNavigation}/>
             </div>
         </div>
     </div>

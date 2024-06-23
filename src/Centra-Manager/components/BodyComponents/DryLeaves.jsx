@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import '../../css/ProductionCentraManager.css'
+import Search from '../../assets/SearchIcon.svg'
+import Add from '../../assets/AddIcon.svg'
 import ProductionInsideChart from '../Charts/ProductionInsideChart'
 import BatchContainerProduction from './BatchContainerProduction'
 import axios from 'axios'
@@ -22,11 +24,11 @@ function DryLeaves({setNavigation}) {
       <div className="ProductionInsideContainer">
         <div className='ProductionInsideSearchBarAndAddNewContainer'>
           <div className='ProductionInsideSearchBar'>
-            <img src='src\Centra-Manager\assets\SearchIcon.svg' className='ProductionInsideSearchBarImage'></img>
+            <img src={Search} className='ProductionInsideSearchBarImage'></img>
             <input className='ProductionInsideSearchBarInput' placeholder='Search'></input>
           </div>
           <div className='ProductionInsideAddNewButton'>
-            <img src='src\Centra-Manager\assets\AddIcon.svg' className='ProductionInsideAddedNewImage'></img>
+            <img src={Add} className='ProductionInsideAddedNewImage'></img>
             <div className='ProductionInsideAddedNewText' onClick={
               () => setNavigation([[false, false], 
               [false, false, false, false, false, true, false, false, false, false], 

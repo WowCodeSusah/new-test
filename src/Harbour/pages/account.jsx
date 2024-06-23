@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSpring, animated } from '@react-spring/web'
 
-function Account({ togglePage, pages }) {
+function Account({ togglePage, pages, userName, userId }) {
 
   const springs = useSpring({
     config: {
@@ -25,6 +25,16 @@ function Account({ togglePage, pages }) {
     delay: 500,
     to: { opacity: 1 },
   })
+
+  async function deleteSession() {
+    axios.post('https://test-backend-k9s7.vercel.app/delete_session/', {}, {withCredentials: true})
+      .then(() => {
+          location.reload()
+      })
+      .catch(error => {
+        console.error('Error fetching session data:', error);
+      });
+  }
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
@@ -75,7 +85,7 @@ function Account({ togglePage, pages }) {
 
         <animated.div style={{...appear}}>
           <p className='mt-2 text-lg text-secondary font-hnbold'>
-            John Doeee
+            {userName}
           </p>
         </animated.div>
 
@@ -88,13 +98,13 @@ function Account({ togglePage, pages }) {
         <animated.div style={{...appear}}>
           <div className='flex items-center justify-center mt-2 w-16 h-5 bg-primary-100 rounded-2xl'>
             <p className='text-xxs text-offwhite font-hnlight'>
-              ID: U108
+              ID: {userId}
             </p>
           </div>
         </animated.div>
       </animated.div>
 
-      <LongButton 
+      {/* <LongButton 
       title='Edit Profile'
       icon={icons.xyzEdit}
       handlePress={submit}
@@ -108,12 +118,12 @@ function Account({ togglePage, pages }) {
       handlePress={submit2}
       isLoading={isSubmitting}
       delay={100}
-      />
+      /> */}
 
       <LongButton 
       title='Logout'
       icon={icons.xyzLogout}
-      handlePress={logout}
+      handlePress={() => deleteSession()}
       isLoading={isSubmitting}
       delay={200}
       />

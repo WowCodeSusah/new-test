@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -8,24 +8,39 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import IconButton from '@mui/material/IconButton';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import PendingAccountPopup from '../PopupEditAssest/PendingAccountPopup';
 import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
+import axios from 'axios';
+import PendingAccountPopup from '../PopupEditAssest/PendingAccountPopup';
 
 const columns = [
   { id: 'name', label: 'Name', minWidth: 170, align: 'center' },
   { id: 'role', label: 'Role', minWidth: 170, align: 'center' },
   { id: 'email', label: 'Email', minWidth: 170, align: 'center' },
   { id: 'password', label: 'Password', minWidth: 170, align: 'center' },
-  { id: 'birthDate', label: 'Birth Date', minWidth: 170, align: 'center' },
+  { id: 'dateOfBirth', label: 'Birth Date', minWidth: 170, align: 'center' },
   { id: 'action', label: 'Action', minWidth: 170, align: 'center' },
 ];
 
-const PendingAccountTable = ({ pendingAccounts }) => {
+const PendingAccountTable = () => {
   const [page, setPage] = useState(0);
   const rowsPerPage = 8;
   const [pendingOpen, setPendingOpen] = useState(false);
   const [selectedAccount, setSelectedAccount] = useState(null);
+  const [pendingAccounts, setPendingAccounts] = useState([]);
+
+  useEffect(() => {
+    // Fetch data using Axios
+    axios.get('https://test-backend-k9s7.vercel.app/users')
+      .then(response => {
+        const allUsers = response.data.all_user;
+        // Filter pending accounts where pending is true
+        const filteredAccounts = allUsers.filter(account => account.pending);
+        setPendingAccounts(filteredAccounts);
+      })
+      .catch(error => {
+        console.error('Error fetching accounts:', error);
+      });
+  }, []);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -38,20 +53,45 @@ const PendingAccountTable = ({ pendingAccounts }) => {
 
   const handlePendingClose = () => {
     setPendingOpen(false);
+    setSelectedAccount(null);
   };
 
-  const confirmAccount = (account) => {
-    // Implement your confirm logic here, for example:
-    console.log(`Confirming account: ${account.name}`);
-    // Handle further actions such as removing from pending list
-    handlePendingClose();
+  const confirmAccount = (accountDetails) => {
+    const url = `http://localhost:8000/users/pending/${accountDetails.idUser}`;
+
+    const data = {
+      pending: false  // Set pending to false for acceptance
+    };
+
+    axios.put(url, data)
+      .then(response => {
+        console.log('Account confirmed:', response.data);
+        // Refresh pending accounts list
+        setPendingAccounts(pendingAccounts.filter(account => account.id !== accountDetails.id));
+        handlePendingClose();
+      })
+      .catch(error => {
+        console.error('Error confirming account:', error);
+      });
   };
 
-  const rejectAccount = (account) => {
-    // Implement your reject logic here, for example:
-    console.log(`Rejecting account: ${account.name}`);
-    // Handle further actions such as removing from pending list
-    handlePendingClose();
+  const rejectAccount = (accountDetails) => {
+    const url = `http://localhost:8000/users/pending/${accountDetails.idUser}`;
+
+    const data = {
+      pending: false  // You might want to set some other state for rejection
+    };
+
+    axios.put(url, data)
+      .then(response => {
+        console.log('Account rejected:', response.data);
+        // Refresh pending accounts list
+        setPendingAccounts(pendingAccounts.filter(account => account.id !== accountDetails.id));
+        handlePendingClose();
+      })
+      .catch(error => {
+        console.error('Error rejecting account:', error);
+      });
   };
 
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, pendingAccounts.length - page * rowsPerPage);
@@ -91,23 +131,21 @@ const PendingAccountTable = ({ pendingAccounts }) => {
                       }}
                     >
                       {column.id === 'action' ? (
-                        <>
-                          <IconButton
-                            aria-label="confirm"
-                            sx={{
-                              color: '#ffffff',
-                              backgroundColor: '#ff7c52',
-                              borderRadius: '8px',
-                              marginRight: '5px',
-                              '&:hover': {
-                                backgroundColor: '#ff6a3e',
-                              },
-                            }}
-                            onClick={() => handlePendingOpen(row)}
-                          >
-                            <PriorityHighIcon />
-                          </IconButton>
-                        </>
+                        <IconButton
+                          aria-label="confirm"
+                          sx={{
+                            color: '#ffffff',
+                            backgroundColor: '#ff7c52',
+                            borderRadius: '8px',
+                            marginRight: '5px',
+                            '&:hover': {
+                              backgroundColor: '#ff6a3e',
+                            },
+                          }}
+                          onClick={() => handlePendingOpen(row)}
+                        >
+                          <PriorityHighIcon />
+                        </IconButton>
                       ) : (
                         value
                       )}
@@ -126,7 +164,7 @@ const PendingAccountTable = ({ pendingAccounts }) => {
       </TableContainer>
       <TablePagination
         sx={{ backgroundColor: '#ebebeb' }}
-        rowsPerPageOptions={[10]}
+        rowsPerPageOptions={[8]}
         component="div"
         count={pendingAccounts.length}
         rowsPerPage={rowsPerPage}
@@ -137,15 +175,12 @@ const PendingAccountTable = ({ pendingAccounts }) => {
         open={pendingOpen}
         onClose={handlePendingClose}
         accountDetails={selectedAccount}
-        onConfirm={(account) => {
-          confirmAccount(account);
-        }}
-        onReject={(account) => {
-          rejectAccount(account);
-        }}
+        onConfirm={confirmAccount}
+        onReject={rejectAccount}
       />
     </Paper>
   );
 };
 
-export default PendingAccountTable; 
+export default PendingAccountTable;
+

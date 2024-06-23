@@ -1,4 +1,5 @@
 import '../../css/ProfileCentraManager.css'
+import ProfileTest from '../../assets/ProfileTest.jpg'
 import CentraManagerAddNewTextField from '../EditAndNewComponent/CentraManagerAddNewTextField'
 import CentraManagerDatePicker from '../EditAndNewComponent/CentraManagerDatePicker'
 import CentraManagerDropDown from '../EditAndNewComponent/CentraManagerDropDown'
@@ -7,7 +8,7 @@ import CentraManagerDropDown from '../EditAndNewComponent/CentraManagerDropDown'
 function CentraManagerProfilePage({setNavigation, previousState}) {
   return (
     <div className='CentraManagerAddNewContainer'>
-        <img src='src\Centra-Manager\assets\ProfileTest.jpg' className='ProfileCentraManagerImageContainer'></img>
+        <img src={ProfileTest} className='ProfileCentraManagerImageContainer'></img>
         <form className='CentraManagerAddNewFormContainer'>
             <div style={{marginTop: '10px'}}>
                 <div className='CentraManagerAddNewSubText'>Fullname</div>

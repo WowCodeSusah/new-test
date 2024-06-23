@@ -1,4 +1,7 @@
 import '../../css/ProductionCentraManager.css'
+import backgroundWet from '../../assets/WetLeaves.png'
+import backgroundDry from '../../assets/DryLeaves.png'
+import backgroundFlour from '../../assets/Flour.png'
 import ProductionImageContainer from './ProductionImageContainer'
 
 // eslint-disable-next-line react/prop-types
@@ -7,7 +10,7 @@ function ProductionDashboard({setBody}) {
     <div style={{marginTop: "50px"}}>
       <ProductionImageContainer 
         label={'Wet \nLeaves'} 
-        imageUrl={'url("src/Centra-Manager/assets/WetLeaves.png")'} 
+        imageUrl={`url(${backgroundWet})`} 
         backgroundsize={"600px"} 
         animationStart={800}
         setBody={setBody}
@@ -15,7 +18,7 @@ function ProductionDashboard({setBody}) {
       />
       <ProductionImageContainer 
         label={'Dry \nLeaves'} 
-        imageUrl={'url("src/Centra-Manager/assets/DryLeaves.png")'} 
+        imageUrl={`url(${backgroundDry})`} 
         backgroundsize={"400px"} 
         animationStart={1000}
         setBody={setBody}
@@ -23,7 +26,7 @@ function ProductionDashboard({setBody}) {
       />
       <ProductionImageContainer 
         label={'Flour'} 
-        imageUrl={'url("src/Centra-Manager/assets/Flour.png")'} 
+        imageUrl={`url(${backgroundFlour})`} 
         backgroundsize={"400px"} 
         animationStart={1200}
         setBody={setBody}

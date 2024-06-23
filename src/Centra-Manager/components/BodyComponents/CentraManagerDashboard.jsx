@@ -1,5 +1,6 @@
 import DashBoardBarChart from "../Charts/DashBoardBarChart"
 import "../../css/CentraManagerBody.css"
+import arrow from '../../assets/arrow.svg'
 import PieChartDashboard from "../Charts/PieChartDashboard"
 import ShippingDashboard from "./ShippingDashboard"
 import { useEffect, useState } from "react"
@@ -74,7 +75,7 @@ function CentraManagerDashboard({setNavigation}) {
                         [false, false, false, false, false], 
                         [true, false, false], 
                         [false, false, false]])}>View more</div>
-                    <img className="ArrowRecentShipping" src="src\Centra-Manager\assets\arrow.svg"></img>
+                    <img className="ArrowRecentShipping" src={arrow}></img>
                 </div>
             </div>
             <div>

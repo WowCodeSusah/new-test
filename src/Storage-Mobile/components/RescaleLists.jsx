@@ -11,7 +11,7 @@ function RescaleLists({searchQuery}) {
     const [allStorage, setAllStorage] = useState([]);
 
     useEffect(() => {
-    axios.get('http://localhost:8000/storages')
+    axios.get('https://test-backend-k9s7.vercel.app/storages')
       .then(response => {
         setAllStorage(response.data.all_storage);
       })

@@ -1,15 +1,18 @@
+import Shipping from '../../assets/shipping.svg'
+import ShippingPressed from '../../assets/shipping-pressed.svg'
+
 // eslint-disable-next-line react/prop-types
 function ShippingIcon({NavigationState, setNavigationState}) {
-    var ImagePath = "src/Centra-Manager/assets/shipping.svg"
+    var ImagePath = Shipping
     var TextColor = "#3C9284"
     var BarSize = "0px"
     
     if (NavigationState[3][0] == true) {
-      ImagePath = "src/Centra-Manager/assets/shipping-pressed.svg"
+      ImagePath = ShippingPressed
       TextColor = "#04315B"
       BarSize = "50px"
     } else {
-      ImagePath = "src/Centra-Manager/assets/shipping.svg"
+      ImagePath = Shipping
       TextColor = "#3C9284"
       BarSize = "0px"
     }

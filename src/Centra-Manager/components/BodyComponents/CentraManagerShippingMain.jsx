@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import '../../css/ShippingCentraManager.css'
+import Search from '../../assets/SearchIcon.svg'
+import Add from '../../assets/AddIcon.svg'
 import ShippingDashboard from './ShippingDashboard'
 import axios from "axios"
 
@@ -47,11 +49,11 @@ function dataTableCheck(Position, Table) {
       <div className="ProductionInsideContainer">
         <div className='ProductionInsideSearchBarAndAddNewContainer'>
           <div className='ProductionInsideSearchBar'>
-            <img src='src\Centra-Manager\assets\SearchIcon.svg' className='ProductionInsideSearchBarImage'></img>
+            <img src={Search} className='ProductionInsideSearchBarImage'></img>
             <input className='ProductionInsideSearchBarInput' placeholder='Search'></input>
           </div>
           <div className='ProductionInsideAddNewButton'>
-            <img src='src\Centra-Manager\assets\AddIcon.svg' className='ProductionInsideAddedNewImage'></img>
+            <img src={Add} className='ProductionInsideAddedNewImage'></img>
             <div className='ProductionInsideAddedNewText' onClick={() => setNavigation(
               [[false, false], 
               [false, false, false, false, false, false, false, false, false, false], 

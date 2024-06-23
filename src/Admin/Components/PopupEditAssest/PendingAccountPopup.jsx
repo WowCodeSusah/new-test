@@ -10,6 +10,7 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
+import axios from 'axios';
 
 const PendingAccountPopup = ({ open, onClose, accountDetails, onConfirm, onReject }) => {
   const [formValues, setFormValues] = useState({
@@ -26,6 +27,14 @@ const PendingAccountPopup = ({ open, onClose, accountDetails, onConfirm, onRejec
       setFormValues(accountDetails);
     }
   }, [accountDetails]);
+
+  const handleConfirmClick = () => {
+    onConfirm(formValues);
+  };
+
+  const handleRejectClick = () => {
+    onReject(formValues);
+  };
 
   return (
     <Dialog 
@@ -45,6 +54,7 @@ const PendingAccountPopup = ({ open, onClose, accountDetails, onConfirm, onRejec
       <DialogTitle sx={{ position: 'relative', paddingBottom: 0, fontSize: 32, fontFamily: 'Helvetica', color: '#04315b', fontWeight: 750, display: 'flex', alignItems: 'center' }}>
         <IconButton
           aria-label="confirm"
+          onClick={handleConfirmClick}
           sx={{
             marginRight: '10px',
             color: '#04315b',
@@ -175,9 +185,9 @@ const PendingAccountPopup = ({ open, onClose, accountDetails, onConfirm, onRejec
       </DialogContent>
       <DialogActions sx={{ paddingRight: '24px', paddingBottom: '24px' }}>
         <Button 
-          onClick={() => onConfirm(formValues)}
           color="primary"
           variant="contained"
+          onClick={handleConfirmClick}
           sx={{
             backgroundColor: '#04315b',
             width: '201px',
@@ -193,9 +203,9 @@ const PendingAccountPopup = ({ open, onClose, accountDetails, onConfirm, onRejec
           Confirm
         </Button>
         <Button 
-          onClick={() => onReject(formValues)}
           color="secondary"
           variant="contained"
+          onClick={handleRejectClick}
           sx={{
             backgroundColor: '#d32f2f',
             width: '201px',

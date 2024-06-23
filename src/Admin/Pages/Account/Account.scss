@@ -1,3 +1,19 @@
+.pendingButton {
+  background-color: #f48c06; /* Orange background color */
+  border: none;
+  border-radius: 50%; /* Makes it circular */
+  cursor: pointer;
+  padding: 7px;
+  margin-right: 10px; /* Adjust margin as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pendingButton:hover {
+  background-color: #e86f00; /* Darker shade on hover */
+}
+
 .accountPage-admin {
   display: flex;
   height: 100vh;
@@ -36,22 +52,6 @@
 .accountHeaderButtons {
   display: flex;
   align-items: center;
-}
-
-.pendingButton {
-  background-color: #f48c06; /* Orange background color */
-  border: none;
-  border-radius: 50%; /* Makes it circular */
-  cursor: pointer;
-  padding: 7px;
-  margin-right: 10px; /* Adjust margin as needed */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.pendingButton:hover {
-  background-color: #e86f00; /* Darker shade on hover */
 }
 
 .fixdash {

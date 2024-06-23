@@ -1,20 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Account.scss';
 import SideBar from "../../Components/sidebar/SideBar.jsx";
 import Navbar from '../../Components/Navbar/Navbar.jsx';
 import AccountTable from '../../Components/AccountTable/AccountTable.jsx';
 import CreateAccountButton from '../../Components/AccountTable/CreateAccountButton.jsx';
 import AddAccountPage from '../../Pages/AddAccount/AddAccountPage.jsx';
-import { useSpring, animated } from '@react-spring/web';
-import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
+import PriorityHighIcon from '@mui/icons-material/PriorityHigh'; // Import the icon
+import axios from 'axios';
 
-function Account({ togglePage, pages }) {
+function Account({ togglePage, pages, setActiveAccountCount }) {
   const [showAddAccount, setShowAddAccount] = useState(false);
-  const [accounts, setAccounts] = useState([
-    { id: 'U108', name: 'John Doe', email: 'johndoe@centra.com', password: 'xxxxxxxxx', birthDate: '12/04/1987', role: 'Admin' },
-    { id: 'U109', name: 'Jane Smith', email: 'janesmith@centra.com', password: 'xxxxxxxxx', birthDate: '05/15/1990', role: 'User' },
-    // ... (other initial rows)
-  ]);
+  const [accounts, setAccounts] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://test-backend-k9s7.vercel.app/users')
+      .then(response => {
+        setAccounts(response.data.all_user);
+        // Calculate active accounts count
+        const activeCount = response.data.all_user.filter(account => account.isActive).length;
+        setActiveAccountCount(activeCount);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, [setActiveAccountCount]);
 
   const handleAddAccount = () => {
     setShowAddAccount(true);
@@ -27,16 +36,18 @@ function Account({ togglePage, pages }) {
   const handleSaveAccount = (newAccount) => {
     setAccounts((prevAccounts) => [...prevAccounts, newAccount]);
     setShowAddAccount(false);
+    // Update active accounts count after saving new account
+    const activeCount = accounts.filter(account => account.isActive).length + 1;
+    setActiveAccountCount(activeCount);
   };
 
-  const widgetSpring = useSpring({ config: { tension: 170, friction: 30 }, from: { x: 500, opacity: 0 }, to: { x: 0, opacity: 1 } });
-  const TitletSpring = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 200 });
-  const iconSpring = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 200 });
-
+  const handlePendingAccount = () => {
+    togglePage(0, 5); // Update this function as per your actual toggle logic
+  };
 
   return (
     <div className="accountPage-admin">
-      <SideBar togglePage={togglePage}/>
+      <SideBar togglePage={togglePage} />
       <div className="fixdash"></div>
       <div className="accountContent-admin">
         <Navbar togglePage={togglePage} />
@@ -47,19 +58,17 @@ function Account({ togglePage, pages }) {
         ) : (
           <div className="accountTableContainer-admin">
             <div className="accountHeader-admin">
-              <animated.div style={TitletSpring}>
-                <h1 className="accountTitle-admin">Account</h1>
-              </animated.div>
-              <animated.div style={iconSpring}className="accountHeaderButtons">
-                <button className="pendingButton" onClick={() => togglePage(0,5)}>
-                  <PriorityHighIcon style={{ color: 'white' }}/> {/* New icon button for pending accounts */}
+              <h1 className="accountTitle-admin">Account</h1>
+              <div className="accountHeaderButtons">
+                <button className="pendingButton" onClick={handlePendingAccount}>
+                  <PriorityHighIcon />
                 </button>
                 <CreateAccountButton onClick={handleAddAccount} />
-              </animated.div>
+              </div>
             </div>
-            <animated.div style={widgetSpring} className="accountTableWrapper-admin">
+            <div className="accountTableWrapper-admin">
               <AccountTable accounts={accounts} setAccounts={setAccounts} />
-            </animated.div>
+            </div>
           </div>
         )}
       </div>

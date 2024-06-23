@@ -27,6 +27,16 @@ function Account({ togglePage, pages, userName, userId }) {
     to: { opacity: 1 },
   })
 
+  async function deleteSession() {
+    axios.post('https://test-backend-k9s7.vercel.app/delete_session/', {}, {withCredentials: true})
+      .then(() => {
+          location.reload()
+      })
+      .catch(error => {
+        console.error('Error fetching session data:', error);
+      });
+  } 
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
 
@@ -42,19 +52,19 @@ function Account({ togglePage, pages, userName, userId }) {
   //   setIsSubmitting(false);
   // };
 
-  const logout = () => {
-    setIsSubmitting(true);
+  // const logout = () => {
+  //   setIsSubmitting(true);
 
-    try {
-      // backend await code here
+  //   try {
+  //     // backend await code here
 
-      navigate('/');
-    } catch (error) {
-      alert(`Error: ${error.message}`);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  //     navigate('/');
+  //   } catch (error) {
+  //     alert(`Error: ${error.message}`);
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
 
   return (
     <div className='bg-offwhite-400 container flex flex-col min-h-screen'>
@@ -114,7 +124,7 @@ function Account({ togglePage, pages, userName, userId }) {
       <LongButton 
       title='Logout'
       icon={icons.xyzLogout}
-      handlePress={logout}
+      handlePress={() => deleteSession()}
       isLoading={isSubmitting}
       delay={200}
       />

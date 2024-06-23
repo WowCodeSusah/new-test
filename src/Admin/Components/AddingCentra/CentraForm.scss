@@ -1,0 +1,62 @@
+.formContainer-admin {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ebebeb;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .formBox-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .formRow-admin {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 20px;
+  
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  .formInput-admin {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  
+    input,
+    textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+  }
+  
+  .submitButton-admin {
+    align-self: flex-end;
+    background-color: #002855;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #04315b;
+    }
+  }
+  

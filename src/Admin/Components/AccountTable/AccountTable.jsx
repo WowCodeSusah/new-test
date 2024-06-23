@@ -14,11 +14,11 @@ import EditAccountPopup from '../PopupEditAssest/EditAccountPopup';
 import DeleteAccountPopup from '../PopupEditAssest/DeleteAccountPopup';
 
 const columns = [
-  { id: 'id', label: 'ID', minWidth: 170, align: 'center' },
+  { id: 'idUser', label: 'ID', minWidth: 170, align: 'center' },
   { id: 'name', label: 'Name', minWidth: 170, align: 'center' },
   { id: 'email', label: 'Email', minWidth: 170, align: 'center' },
-  { id: 'password', label: 'Password', minWidth: 170, align: 'center' },
-  { id: 'birthDate', label: 'Birth Date', minWidth: 170, align: 'center' },
+  { id: 'Password', label: 'Password', minWidth: 170, align: 'center' },
+  { id: 'dateOfBirth', label: 'Birth Date', minWidth: 170, align: 'center' },
   { id: 'role', label: 'Role', minWidth: 170, align: 'center' },
   { id: 'action', label: 'Action', minWidth: 170, align: 'center' },
 ];
@@ -36,11 +36,18 @@ const AccountTable = ({ accounts, setAccounts }) => {
 
   const handleEditOpen = (account) => {
     setSelectedAccount(account);
+    console.log(account);
     setEditOpen(true);
   };
 
   const handleEditClose = () => {
     setEditOpen(false);
+  };
+
+  const handleSave = (updatedDetails) => {
+    setAccounts(prevAccounts => prevAccounts.map(account => 
+      account.idUser === selectedAccount.idUser ? { ...account, ...updatedDetails } : account
+    ));
   };
 
   const handleDeleteOpen = (account) => {
@@ -53,23 +60,15 @@ const AccountTable = ({ accounts, setAccounts }) => {
   };
 
   const handleDeleteAccount = () => {
-    const updatedAccounts = accounts.filter((account) => account.id !== selectedAccount.id);
+    const updatedAccounts = accounts.filter((account) => account.idUser !== selectedAccount.idUser);
     setAccounts(updatedAccounts);
     setDeleteOpen(false);
   };
 
-  const handleSaveAccount = (updatedAccount) => {
-    const updatedAccounts = accounts.map((account) =>
-      account.id === updatedAccount.id ? updatedAccount : account
-    );
-    setAccounts(updatedAccounts);
-    handleEditClose();
-  };
-
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, accounts.length - page * rowsPerPage);
 
-  const maskPassword = (password) => {
-    return '*'.repeat(password.length); // Replace with your own masking logic if needed
+  const maskPassword = () => {
+    return '*****'; // Replace with your own masking logic if needed
   };
 
   return (
@@ -138,8 +137,8 @@ const AccountTable = ({ accounts, setAccounts }) => {
                             <DeleteOutlineIcon />
                           </IconButton>
                         </>
-                      ) : column.id === 'password' ? (
-                        maskPassword(value) // Mask the password
+                      ) : column.id === 'Password' ? (
+                        maskPassword(5) // Mask the password
                       ) : (
                         value
                       )}
@@ -169,7 +168,7 @@ const AccountTable = ({ accounts, setAccounts }) => {
         open={editOpen}
         onClose={handleEditClose}
         accountDetails={selectedAccount}
-        onSave={handleSaveAccount}
+        onSave={handleSave}  // Pass the handleSave function
       />
       <DeleteAccountPopup
         open={deleteOpen}

@@ -13,34 +13,42 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
+import axios from 'axios';
 
 const EditAccountPopup = ({ open, onClose, accountDetails, onSave }) => {
-  const [formValues, setFormValues] = useState({
-    id: '',
-    name: '',
-    email: '',
-    password: '',
-    birthDate: '',
-    role: '',
-  });
+  const [id, setId] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [birthDate, setBirthDate] = useState('');
+  const [role, setRole] = useState('');
 
   useEffect(() => {
     if (accountDetails) {
-      setFormValues(accountDetails);
+      setId(accountDetails.idUser);
+      setName(accountDetails.name);
+      setEmail(accountDetails.email);
+      setBirthDate(accountDetails.birthDate);
+      setRole(accountDetails.role);
     }
   }, [accountDetails]);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormValues({
-      ...formValues,
-      [name]: value,
-    });
-  };
-
   const handleSave = () => {
-    console.log('Saving:', formValues); // Debugging line
-    onSave(formValues);
+    const updatedDetails = {
+      name: name,
+      email: email,
+      dateOfBirth: birthDate,
+      role: role,
+    };
+
+    axios.put(`http://localhost:8000/users/${accountDetails.idUser}`, updatedDetails)
+      .then(response => {
+        console.log('Data saved successfully:', response);
+        onSave(updatedDetails);  // Notify parent of the changes
+        onClose();  // Close the dialog
+      })
+      .catch(error => {
+        console.error('Error saving data:', error);
+      });
   };
 
   return (
@@ -50,11 +58,11 @@ const EditAccountPopup = ({ open, onClose, accountDetails, onSave }) => {
       PaperProps={{
         sx: {
           width: '100%',
-          maxWidth: '900px', // Set a max width for larger screens
-          height: '607px', // Match the height of the rectangleDiv
+          maxWidth: '900px',
+          height: '607px',
           borderRadius: '20px',
           backgroundColor: '#fffdfd',
-          padding: '20px', // Optional: Add some padding for content
+          padding: '20px',
         },
       }}
     >
@@ -63,7 +71,7 @@ const EditAccountPopup = ({ open, onClose, accountDetails, onSave }) => {
           aria-label="edit"
           sx={{
             marginRight: '10px',
-            color: '#04315b', // Icon color
+            color: '#04315b',
           }}
         >
           <EditOutlinedIcon />
@@ -82,92 +90,76 @@ const EditAccountPopup = ({ open, onClose, accountDetails, onSave }) => {
           <CloseIcon />
         </IconButton>
       </DialogTitle>
-      <DialogContent> {/* the grid  */}
+      <DialogContent>
         <Grid container spacing={2}>
           <Grid item xs={6}>
             <TextField
               margin="dense"
-              label="ID" //ID
+              label="ID"
               type="text"
               fullWidth
-              name="id" 
-              value={formValues.id}
-              onChange={handleChange}
+              name="id"
+              value={id}
+              onChange={(e) => setId(e.target.value)}
               disabled
               InputProps={{
-                sx: { borderRadius: '16px', borderColor: '#04315b', color: '#04315b' }, // Rounded corners, border color, and text color
+                sx: { borderRadius: '16px', borderColor: '#04315b', color: '#04315b' },
               }}
               InputLabelProps={{
-                sx: { color: '#04315b' }, // Text color
+                sx: { color: '#04315b' },
               }}
             />
           </Grid>
           <Grid item xs={6}>
             <TextField
               margin="dense"
-              label="Full Name" // Name
+              label="Full Name"
               type="text"
               fullWidth
               name="name"
-              value={formValues.name}
-              onChange={handleChange}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               InputProps={{
-                sx: { borderRadius: '16px', borderColor: '#04315b', color: '#04315b' }, // Rounded corners, border color, and text color
+                sx: { borderRadius: '16px', borderColor: '#04315b', color: '#04315b' },
               }}
               InputLabelProps={{
-                sx: { color: '#04315b' }, // Text color
+                sx: { color: '#04315b' },
               }}
             />
           </Grid>
           <Grid item xs={6}>
             <TextField
               margin="dense"
-              label="Email" // Email
-              type="email"
+              label="Email"
+              type="text"
               fullWidth
               name="email"
-              value={formValues.email}
-              onChange={handleChange}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               InputProps={{
-                sx: { borderRadius: '16px', borderColor: '#04315b', color: '#04315b' }, // Rounded corners, border color, and text color
+                sx: { borderRadius: '16px', borderColor: '#04315b', color: '#04315b' },
               }}
               InputLabelProps={{
-                sx: { color: '#04315b' }, // Text color
+                sx: { color: '#04315b' },
               }}
             />
           </Grid>
+          
           <Grid item xs={6}>
             <TextField
               margin="dense"
-              label="Password" // Password
-              type="password"
-              fullWidth
-              name="password"
-              value={formValues.password}
-              onChange={handleChange}
-              InputProps={{
-                sx: { borderRadius: '16px', borderColor: '#04315b', color: '#04315b' }, // Rounded corners, border color, and text color
-              }}
-              InputLabelProps={{
-                sx: { color: '#04315b' }, // Text color
-              }}
-            />
-          </Grid>
-          <Grid item xs={6}>
-            <TextField
-              margin="dense"
-              label="Birthdate" // Birthdate
-              type="date"
+              label="Birthdate"
+              type="text"
               fullWidth
               name="birthDate"
-              value={formValues.birthDate}
-              onChange={handleChange}
+              value={birthDate}
+              onChange={(e) => setBirthDate(e.target.value)}
               InputLabelProps={{
                 shrink: true,
-                sx: { color: '#04315b' }, // Text color
+                sx: { color: '#04315b' },
               }}
               InputProps={{
-                sx: { borderRadius: '16px', borderColor: '#04315b', color: '#04315b' }, // Rounded corners, border color, and text color
+                sx: { borderRadius: '16px', borderColor: '#04315b', color: '#04315b' },
               }}
             />
           </Grid>
@@ -175,24 +167,27 @@ const EditAccountPopup = ({ open, onClose, accountDetails, onSave }) => {
             <FormControl fullWidth margin="dense">
               <InputLabel sx={{ color: '#04315b' }}>Role</InputLabel>
               <Select
-                name="role" // Role 
-                value={formValues.role}
-                onChange={handleChange}
-                label="Role" 
-                sx={{ borderRadius: '16px', borderColor: '#04315b' }} // Rounded corners and border color
+                name="role"
+                value={role}
+                onChange={(e) => setRole(e.target.value)}
+                label="Role"
+                sx={{ borderRadius: '16px', borderColor: '#04315b' }}
                 inputProps={{
-                  sx: { color: '#04315b' }, // Text color
+                  sx: { color: '#04315b' },
                 }}
               >
-                <MenuItem value="XYZ">XYZ</MenuItem>
-                <MenuItem value="Central">Central</MenuItem>
-                <MenuItem value="Harbour">Harbour</MenuItem>
+                <MenuItem value="">None</MenuItem>
+                <MenuItem value="XYZ Employee">XYZ Employee</MenuItem>
+                <MenuItem value="XYZ Manager">XYZ Manager</MenuItem>
+                <MenuItem value="Harbour">Harbour</MenuItem> 
+                <MenuItem value="Centra Employee 1">Centra Employee </MenuItem>
+                <MenuItem value="Centra Manager 1">Centra Manager </MenuItem>
               </Select>
             </FormControl>
           </Grid>
         </Grid>
       </DialogContent>
-      <DialogActions sx={{ paddingRight: '24px', paddingBottom: '24px' }}> {/* confirm button */}
+      <DialogActions sx={{ paddingRight: '24px', paddingBottom: '24px' }}>
         <Button 
           onClick={handleSave}
           color="primary"
@@ -200,14 +195,14 @@ const EditAccountPopup = ({ open, onClose, accountDetails, onSave }) => {
           sx={{
             backgroundColor: '#04315b',
             width: '201px',
-            borderRadius: '13px', // Rounded corners for the button
+            borderRadius: '13px',
             height: '62px',
             fontSize: 20,
             '&:hover': {
-              backgroundColor: '#04315b', // Maintain the same color on hover
+              backgroundColor: '#04315b',
             },
           }}
-          style={{ textTransform: 'none' }} 
+          style={{ textTransform: 'none' }}
         >
           Confirm
         </Button>

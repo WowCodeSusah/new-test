@@ -5,10 +5,10 @@ import BottomTab from '../components/BottomTab'
 import { useState, useEffect } from 'react'
 import { useSpring, animated } from '@react-spring/web'
 
-function History({ togglePage, pages }) {
+function History({ togglePage, pages, userName, userId }) {
 
   const [scrollPercent, setScrollPercent] = useState(0);
-  const [allShipments, setShipments] = useState([]);
+  const [allShipments, setAllShipments] = useState([]);
   const [timeFilter, setTimeFilter] = useState('all');
 
   const handleScroll = () => {
@@ -26,18 +26,18 @@ function History({ togglePage, pages }) {
     };
   }, []);
 
-  useEffect(() => {
-    const fetchAllShipments = async () => {
-      try {
-        const response = await axios.get('http://localhost:8000/shipments');
-        setShipments(response.data.all_shipment);
-      } catch (error) {
-        console.error('Error fetching shipments:', error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchAllShipments = async () => {
+  //     try {
+  //       const response = await axios.get('http://localhost:8000/shipments');
+  //       setShipments(response.data.all_shipment);
+  //     } catch (error) {
+  //       console.error('Error fetching shipments:', error);
+  //     }
+  //   };
 
-    fetchAllShipments();
-  }, []);
+  //   fetchAllShipments();
+  // }, []);
 
   const springs = useSpring({
     config: {
@@ -84,6 +84,16 @@ function History({ togglePage, pages }) {
     from: { y: -100, opacity: 0 },
     to: { y: 0, opacity: 1 },
   })
+
+  useEffect(() => {
+    axios.get('https://test-backend-k9s7.vercel.app/shipments')
+      .then(response => {
+        setAllShipments(response.data.all_shipment);
+      })
+      .catch(error => {
+        console.error('Error fetching storage data:', error);
+      });
+    }, []);
 
   // Function to handle time filter change
   const handleTimeFilterChange = (filterValue) => {
@@ -145,7 +155,7 @@ function History({ togglePage, pages }) {
 
               <animated.div style={{...spring2}}>
                 <p className="text-base font-hnbold text-secondary">
-                  John Doeee
+                  {userName}
                 </p>
               </animated.div>
           </div>
@@ -199,19 +209,19 @@ function History({ togglePage, pages }) {
                 <div className='bg-offwhite-400 w-full h-full flex flex-col justify-evenly px-2 py-1'>
                   <div className='flex'>
                     <div className='flex flex-grow'>
-                      <div className='w-20 h-4'><p className='text-secondary font-hnroman text-xs'>Centra ID</p></div>
+                      <div className='w-16 h-4'><p className='text-secondary font-hnroman text-xs'>Centra ID</p></div>
                       <div className='w-2 h-4'><p className='text-secondary font-hnroman text-xs'>:</p></div>
                       <div className='flex-grow h-4'><p className='text-secondary font-hnroman text-xs'>{item.idCentra}</p></div>
                     </div>
                     <div className='flex flex-grow'>
-                      <div className='w-20 h-4'><p className='text-secondary font-hnroman text-xs'>Weight</p></div>
+                      <div className='w-12 h-4'><p className='text-secondary font-hnroman text-xs'>Weight</p></div>
                       <div className='w-2 h-4'><p className='text-secondary font-hnroman text-xs'>:</p></div>
                       <div className='flex-grow h-4'><p className='text-secondary font-hnroman text-xs'>{item.weight} kg</p></div>
                     </div>
                   </div>
 
                   <div className='flex'>
-                      <div className='w-20 h-4'><p className='text-secondary font-hnroman text-xs'>Date</p></div>
+                      <div className='w-16 h-4'><p className='text-secondary font-hnroman text-xs'>Date</p></div>
                       <div className='w-2 h-4'><p className='text-secondary font-hnroman text-xs'>:</p></div>
                       <div className='flex-grow h-4'><p className='text-secondary font-hnroman text-xs'>{formatDate(item.estimated)}</p></div>
                   </div>

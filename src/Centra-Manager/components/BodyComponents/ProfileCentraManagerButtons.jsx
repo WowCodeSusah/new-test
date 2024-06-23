@@ -1,5 +1,6 @@
 import '../../css/ProfileCentraManager.css'
 import { useSpring, animated } from '@react-spring/web'
+import arrowIcon from '../../assets/ArrowIconProfile.svg'
 
 // eslint-disable-next-line react/prop-types
 function ProfileCentraManagerButtons({label, imgSRC, animationStart, setNavigation}) {
@@ -42,7 +43,7 @@ function ProfileCentraManagerButtons({label, imgSRC, animationStart, setNavigati
     <animated.div className='ProfileCentraManagerContainerEditProfileButton' style={{...springs}} onClick={() => handleFunction()}>
         <img src={imgSRC} className='ProfileCentraManagerButtonImagePlaceHolder'></img>
         <div className='ProfileCentraManagerTextLabel'>{label}</div>
-        <img src='src\Centra-Manager\assets\ArrowIconProfile.svg' className='ProfileCentraManagerArrowImage'></img>
+        <img src={arrowIcon} className='ProfileCentraManagerArrowImage'></img>
     </animated.div>
   )
 }

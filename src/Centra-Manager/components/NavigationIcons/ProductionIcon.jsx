@@ -1,15 +1,18 @@
+import productionPressed from '../../assets/production-pressed.svg'
+import Production from '../../assets/production.svg'
+
 // eslint-disable-next-line react/prop-types
 function ProductionIcon({NavigationState, setNavigationState}) {
-    var ImagePath = "../../assets/production.svg"
+    var ImagePath = Production
     var TextColor = "#3C9284"
     var BarSize = "0px"
     
     if (NavigationState[1][0] == true || NavigationState[1][1] == true || NavigationState[1][2] == true || NavigationState[1][3] == true) {
-      ImagePath = "../../assets/production-pressed.svg"
+      ImagePath = productionPressed
       TextColor = "#04315B"
       BarSize = "50px"
     } else {
-      ImagePath = "../../assets/production.svg"
+      ImagePath = Production
       TextColor = "#3C9284"
       BarSize = "0px"
     }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { TextField, Button, Box } from '@mui/material';
+import { TextField, Button, Box, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
+import axios from 'axios'; // Import Axios
 import './AccountForm.scss';
 
 const AccountForm = ({ onSave }) => {
@@ -7,7 +8,7 @@ const AccountForm = ({ onSave }) => {
     name: '',
     email: '',
     password: '',
-    birthDate: '',
+    dateOfBirth: '',
     role: '',
   });
 
@@ -30,18 +31,23 @@ const AccountForm = ({ onSave }) => {
     if (!accountData.name) newErrors.name = 'Name is required';
     if (!accountData.email) newErrors.email = 'Email is required';
     if (!accountData.password) newErrors.password = 'Password is required';
-    if (!accountData.birthDate) newErrors.birthDate = 'Birth Date is required';
+    if (!accountData.dateOfBirth) newErrors.dateOfBirth = 'Birth Date is required';
     if (!accountData.role) newErrors.role = 'Role is required';
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
-      onSave(accountData);
+      try {
+        const response = await axios.post('http://localhost:8000/users', accountData);
+        onSave(response.data); // Call the onSave callback with the response data
+      } catch (error) {
+        console.error('There was an error creating the account!', error);
+      }
     }
   };
 
@@ -94,32 +100,45 @@ const AccountForm = ({ onSave }) => {
             <TextField
               fullWidth
               variant="outlined"
-              name="birthDate"
+              name="dateOfBirth"
               type="date"
               InputLabelProps={{ shrink: true }}
-              value={accountData.birthDate}
+              value={accountData.dateOfBirth}
               onChange={handleChange}
-              error={!!errors.birthDate}
-              helperText={errors.birthDate}
+              error={!!errors.dateOfBirth}
+              helperText={errors.dateOfBirth}
             />
           </div>
         </div>
         <div className="formRow-admin">
           <div className="formInput-admin">
-            <label>Role:</label>
-            <TextField
-              fullWidth
-              variant="outlined"
-              name="role"
-              value={accountData.role}
-              onChange={handleChange}
-              error={!!errors.role}
-              helperText={errors.role}
-            />
+            <FormControl fullWidth margin="dense">
+              <InputLabel>Role</InputLabel>
+              <Select
+                name="role"
+                value={accountData.role}
+                onChange={handleChange}
+                error={!!errors.role}
+                label="Role"
+                fullWidth
+              >
+                <MenuItem value="">None</MenuItem>
+                <MenuItem value="XYZ Employee">XYZ Employee</MenuItem>
+                <MenuItem value="XYZ Manager">XYZ Manager</MenuItem>
+                <MenuItem value="Harbour">Harbour</MenuItem> 
+                <MenuItem value="Centra Employee 1">Centra Employee</MenuItem>
+                <MenuItem value="Centra Manager 1">Centra Manager</MenuItem>
+              </Select>
+              {errors.role && (
+                <Box mt={1} color="error.main">
+                  {errors.role}
+                </Box>
+              )}
+            </FormControl>
           </div>
         </div>
-        <Box mt={2}  style={{ textAlign: 'right' }}>
-          <Button type="submit" variant="contained" color="primary" >
+        <Box mt={2} style={{ textAlign: 'right' }}>
+          <Button type="submit" variant="contained" color="primary">
             Save Account
           </Button>
         </Box>

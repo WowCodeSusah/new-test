@@ -1,6 +1,8 @@
 import '../../css/ProductionCentraManager.css'
 import PropTypes from "prop-types";
 import { useSpring, animated } from '@react-spring/web'
+import pencil from '../../assets/PencilIcon.svg'
+import Delete from '../../assets/DeleteIcon.svg'
 
 // eslint-disable-next-line react/prop-types
 function BatchContainerProduction({part, data , setDeleteUpdate, animationStart, setNavigation, id}) {
@@ -82,11 +84,11 @@ function BatchContainerProduction({part, data , setDeleteUpdate, animationStart,
         <div className='BatchProductionContainerBottomTextEdit'>
           <div className='BatchProductionContainerDeleteButton' onClick={() => setDeleteUpdate(true)}>
             <div style={{margin: "auto"}} >Delete</div>
-            <img src='src\Centra-Manager\assets\DeleteIcon.svg' style={{margin: "auto", maxWidth: "none"}}></img>
+            <img src={Delete} style={{margin: "auto", maxWidth: "none"}}></img>
           </div>
           <div className='BatchProductionContainerEditButton' onClick={() => setNavigation(movementSlot)}>
             <div style={{margin: "auto"}}>Input</div>
-            <img src='src\Centra-Manager\assets\PencilIcon.svg' style={{margin: "auto", maxWidth: "none"}}></img>
+            <img src={pencil} style={{margin: "auto", maxWidth: "none"}}></img>
           </div>
         </div>
       </div>

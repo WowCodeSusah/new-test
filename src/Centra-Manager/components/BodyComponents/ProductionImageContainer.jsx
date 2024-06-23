@@ -1,5 +1,6 @@
 import { useSpring, animated } from '@react-spring/web'
 import '../../css/ProductionCentraManager.css'
+import arrowForward from '../../assets/arrow-forward.svg'
 
 // eslint-disable-next-line react/prop-types
 function ProductionImageContainer({label, imageUrl, backgroundsize, animationStart, setBody, selection}) {
@@ -18,7 +19,7 @@ function ProductionImageContainer({label, imageUrl, backgroundsize, animationSta
           <div className='ProductionImageContainerCover'>
               <pre className='ProductionImageContainerLabel'>{label}</pre>
               <div className='ProductionImageContainerArrowContainer'>
-                <img className='ProductionImageContainerArrow' src='src/Centra-Manager/assets/arrow-forward.svg'></img>
+                <img className='ProductionImageContainerArrow' src={arrowForward}></img>
               </div>
           </div>
       </div>

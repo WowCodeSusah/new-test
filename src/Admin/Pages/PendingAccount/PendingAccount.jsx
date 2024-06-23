@@ -5,6 +5,8 @@ import Navbar from '../../Components/Navbar/Navbar.jsx';
 import PendingAccountTable from '../../Components/AccountTable/PendingAccountTable.jsx';
 import AddAccountPage from '../../Pages/AddAccount/AddAccountPage.jsx';
 import { useSpring, animated } from '@react-spring/web';
+import { IconButton } from '@mui/material';
+import { ArrowBack } from '@mui/icons-material';
 
 function PendingAccount({ togglePage, pages, mainAccounts, setMainAccounts }) {
   const [showAddAccount, setShowAddAccount] = useState(false);
@@ -37,27 +39,29 @@ function PendingAccount({ togglePage, pages, mainAccounts, setMainAccounts }) {
 
   return (
     <div className="accountPage-admin">
-      <SideBar togglePage={togglePage}/>
       <SideBar togglePage={togglePage} />
       <div className="fixdash"></div>
       <div className="accountContent-admin">
         <Navbar togglePage={togglePage} />
-        {showAddAccount ? (
-          <div className="editAccountContainer-admin">
-            <AddAccountPage onBack={handleBack} onSaveAccount={handleSaveAccount} />
+        <div className="accountTableContainer-admin">
+          <div className="accountHeader-admin">
+          <IconButton className="backButton-admin" onClick={() => togglePage(0, 2)}>
+              <ArrowBack style={{ color: '#04315b' }} />
+            </IconButton>
+            <animated.div style={TitletSpring}>
+              <h1 className="accountTitle-admin">Pending Accounts</h1>
+            </animated.div>
           </div>
-        ) : (
-          <div className="accountTableContainer-admin">
-            <div className="accountHeader-admin">
-              <animated.div style={TitletSpring}>
-                <h1 className="accountTitle-admin">Pending Accounts</h1>
-              </animated.div>
+          {showAddAccount ? (
+            <div className="editAccountContainer-admin">
+              <AddAccountPage onBack={handleBack} onSaveAccount={handleSaveAccount} />
             </div>
+          ) : (
             <animated.div style={widgetSpring} className="accountTableWrapper-admin">
               <PendingAccountTable pendingAccounts={pendingAccounts} setPendingAccounts={setPendingAccounts} confirmAccount={confirmAccount} />
             </animated.div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
